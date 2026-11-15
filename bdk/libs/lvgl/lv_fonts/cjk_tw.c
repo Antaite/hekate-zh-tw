@@ -58,20 +58,20 @@ static const uint32_t cjk_tw_20_unicode[] = {
     0x5713, 0x5716, 0x5728, 0x5730, 0x5740, 0x5747, 0x578B, 0x57DF, 0x57F7, 0x57FA, 0x5831, 0x584A,
     0x58D3, 0x58DE, 0x58EC, 0x58F9, 0x58FD, 0x590F, 0x5916, 0x591A, 0x5927, 0x5929, 0x592A, 0x5931,
     0x593E, 0x5957, 0x5979, 0x597D, 0x5982, 0x59CB, 0x5B57, 0x5B58, 0x5B83, 0x5B89, 0x5B8C, 0x5B9A,
-    0x5BB9, 0x5BC6, 0x5BE6, 0x5BEB, 0x5BEC, 0x5C01, 0x5C07, 0x5C0B, 0x5C0D, 0x5C0F, 0x5C11, 0x5C31,
-    0x5C64, 0x5C6C, 0x5DE5, 0x5DE6, 0x5DF1, 0x5DF2, 0x5E33, 0x5E36, 0x5E38, 0x5E55, 0x5E6B, 0x5E73,
-    0x5E74, 0x5E9A, 0x5EA6, 0x5EA7, 0x5EE0, 0x5EFA, 0x5F0F, 0x5F37, 0x5F62, 0x5F69, 0x5F71, 0x5F85,
-    0x5F88, 0x5F8C, 0x5F91, 0x5F97, 0x5F9E, 0x5FA9, 0x5FC3, 0x5FC5, 0x5FEB, 0x6027, 0x6062, 0x606F,
-    0x60F3, 0x610F, 0x611F, 0x614B, 0x6162, 0x61B6, 0x61C9, 0x620A, 0x6210, 0x6211, 0x6216, 0x622A,
-    0x6232, 0x6240, 0x6247, 0x624B, 0x624D, 0x627E, 0x628A, 0x62BD, 0x62C6, 0x62D2, 0x62D4, 0x62FE,
-    0x62FF, 0x6307, 0x6309, 0x634C, 0x6383, 0x6389, 0x6392, 0x639B, 0x63A2, 0x63A5, 0x63A7, 0x63CF,
-    0x63D0, 0x63D2, 0x63DB, 0x63F4, 0x640D, 0x641C, 0x642C, 0x642D, 0x64C7, 0x64CD, 0x64EC, 0x64F4,
-    0x652F, 0x6536, 0x6539, 0x653E, 0x6548, 0x6557, 0x6574, 0x6578, 0x6587, 0x6599, 0x65B0, 0x65B7,
-    0x65B9, 0x65BC, 0x65E5, 0x65E9, 0x660E, 0x661F, 0x6620, 0x6625, 0x6628, 0x662F, 0x6642, 0x665A,
-    0x666F, 0x6676, 0x6697, 0x66AB, 0x66F4, 0x66FF, 0x6700, 0x6703, 0x6708, 0x6709, 0x670D, 0x671F,
-    0x672A, 0x672C, 0x675F, 0x6771, 0x677F, 0x6790, 0x679C, 0x67D2, 0x67E5, 0x6821, 0x6838, 0x6839,
-    0x683C, 0x6848, 0x684C, 0x696D, 0x69FD, 0x6A19, 0x6A21, 0x6A23, 0x6A5F, 0x6A94, 0x6AA2, 0x6B0A,
-    0x6B21, 0x6B61, 0x6B62, 0x6B63, 0x6B65, 0x6BB5, 0x6BC0, 0x6BCF, 0x6BD4, 0x6C23, 0x6C38, 0x6C42,
+    0x5BB9, 0x5BC6, 0x5BE6, 0x5BEB, 0x5BEC, 0x5C07, 0x5C0B, 0x5C0D, 0x5C0F, 0x5C11, 0x5C31, 0x5C64,
+    0x5C6C, 0x5DE5, 0x5DE6, 0x5DF1, 0x5DF2, 0x5E33, 0x5E36, 0x5E38, 0x5E55, 0x5E6B, 0x5E73, 0x5E74,
+    0x5E9A, 0x5EA6, 0x5EA7, 0x5EE0, 0x5EFA, 0x5F0F, 0x5F37, 0x5F62, 0x5F69, 0x5F71, 0x5F85, 0x5F88,
+    0x5F8C, 0x5F91, 0x5F97, 0x5F9E, 0x5FA9, 0x5FC3, 0x5FC5, 0x5FEB, 0x6027, 0x6062, 0x606F, 0x60F3,
+    0x610F, 0x611F, 0x614B, 0x6162, 0x61B6, 0x61C9, 0x620A, 0x6210, 0x6211, 0x6216, 0x622A, 0x6232,
+    0x6240, 0x6247, 0x624B, 0x624D, 0x627E, 0x628A, 0x62BD, 0x62C6, 0x62D2, 0x62D4, 0x62FE, 0x62FF,
+    0x6307, 0x6309, 0x634C, 0x6383, 0x6389, 0x6392, 0x639B, 0x63A2, 0x63A5, 0x63A7, 0x63CF, 0x63D0,
+    0x63D2, 0x63DB, 0x63F4, 0x640D, 0x641C, 0x642C, 0x642D, 0x64C7, 0x64CD, 0x64EC, 0x64F4, 0x652F,
+    0x6536, 0x6539, 0x653E, 0x6548, 0x6557, 0x6574, 0x6578, 0x6587, 0x6599, 0x65B0, 0x65B7, 0x65B9,
+    0x65BC, 0x65E5, 0x65E9, 0x660E, 0x661F, 0x6620, 0x6625, 0x6628, 0x662F, 0x6642, 0x665A, 0x666F,
+    0x6676, 0x6697, 0x66AB, 0x66F4, 0x66FF, 0x6700, 0x6703, 0x6708, 0x6709, 0x670D, 0x671F, 0x672A,
+    0x672C, 0x675F, 0x6771, 0x677F, 0x6790, 0x679C, 0x67D2, 0x67E5, 0x6821, 0x6838, 0x6839, 0x683C,
+    0x6848, 0x684C, 0x696D, 0x69FD, 0x6A19, 0x6A21, 0x6A23, 0x6A5F, 0x6A94, 0x6AA2, 0x6B0A, 0x6B21,
+    0x6B61, 0x6B62, 0x6B63, 0x6B65, 0x6B78, 0x6BB5, 0x6BC0, 0x6BCF, 0x6BD4, 0x6C23, 0x6C38, 0x6C42,
     0x6C60, 0x6C92, 0x6CD5, 0x6CE8, 0x6D1E, 0x6D41, 0x6D88, 0x6DF7, 0x6E05, 0x6E2C, 0x6E4A, 0x6E90,
     0x6E96, 0x6EAB, 0x6EFF, 0x6F0F, 0x7070, 0x70BA, 0x7121, 0x7194, 0x71B1, 0x71D2, 0x7247, 0x7248,
     0x7259, 0x7279, 0x72C0, 0x7368, 0x7387, 0x7396, 0x73FE, 0x7406, 0x751A, 0x751F, 0x7522, 0x7528,
@@ -294,162 +294,162 @@ static const lv_font_glyph_dsc_t cjk_tw_20_dsc[] = {
     {.w_px = 17, .glyph_index = 65960}, /* U+5BE6 實 */
     {.w_px = 17, .glyph_index = 66300}, /* U+5BEB 寫 */
     {.w_px = 17, .glyph_index = 66640}, /* U+5BEC 寬 */
-    {.w_px = 17, .glyph_index = 66980}, /* U+5C01 封 */
-    {.w_px = 17, .glyph_index = 67320}, /* U+5C07 將 */
-    {.w_px = 17, .glyph_index = 67660}, /* U+5C0B 尋 */
-    {.w_px = 17, .glyph_index = 68000}, /* U+5C0D 對 */
-    {.w_px = 17, .glyph_index = 68340}, /* U+5C0F 小 */
-    {.w_px = 17, .glyph_index = 68680}, /* U+5C11 少 */
-    {.w_px = 17, .glyph_index = 69020}, /* U+5C31 就 */
-    {.w_px = 17, .glyph_index = 69360}, /* U+5C64 層 */
-    {.w_px = 17, .glyph_index = 69700}, /* U+5C6C 屬 */
-    {.w_px = 17, .glyph_index = 70040}, /* U+5DE5 工 */
-    {.w_px = 17, .glyph_index = 70380}, /* U+5DE6 左 */
-    {.w_px = 17, .glyph_index = 70720}, /* U+5DF1 己 */
-    {.w_px = 17, .glyph_index = 71060}, /* U+5DF2 已 */
-    {.w_px = 17, .glyph_index = 71400}, /* U+5E33 帳 */
-    {.w_px = 17, .glyph_index = 71740}, /* U+5E36 帶 */
-    {.w_px = 17, .glyph_index = 72080}, /* U+5E38 常 */
-    {.w_px = 17, .glyph_index = 72420}, /* U+5E55 幕 */
-    {.w_px = 17, .glyph_index = 72760}, /* U+5E6B 幫 */
-    {.w_px = 17, .glyph_index = 73100}, /* U+5E73 平 */
-    {.w_px = 17, .glyph_index = 73440}, /* U+5E74 年 */
-    {.w_px = 17, .glyph_index = 73780}, /* U+5E9A 庚 */
-    {.w_px = 17, .glyph_index = 74120}, /* U+5EA6 度 */
-    {.w_px = 17, .glyph_index = 74460}, /* U+5EA7 座 */
-    {.w_px = 17, .glyph_index = 74800}, /* U+5EE0 廠 */
-    {.w_px = 17, .glyph_index = 75140}, /* U+5EFA 建 */
-    {.w_px = 17, .glyph_index = 75480}, /* U+5F0F 式 */
-    {.w_px = 17, .glyph_index = 75820}, /* U+5F37 強 */
-    {.w_px = 17, .glyph_index = 76160}, /* U+5F62 形 */
-    {.w_px = 17, .glyph_index = 76500}, /* U+5F69 彩 */
-    {.w_px = 17, .glyph_index = 76840}, /* U+5F71 影 */
-    {.w_px = 17, .glyph_index = 77180}, /* U+5F85 待 */
-    {.w_px = 17, .glyph_index = 77520}, /* U+5F88 很 */
-    {.w_px = 17, .glyph_index = 77860}, /* U+5F8C 後 */
-    {.w_px = 17, .glyph_index = 78200}, /* U+5F91 徑 */
-    {.w_px = 17, .glyph_index = 78540}, /* U+5F97 得 */
-    {.w_px = 17, .glyph_index = 78880}, /* U+5F9E 從 */
-    {.w_px = 17, .glyph_index = 79220}, /* U+5FA9 復 */
-    {.w_px = 17, .glyph_index = 79560}, /* U+5FC3 心 */
-    {.w_px = 17, .glyph_index = 79900}, /* U+5FC5 必 */
-    {.w_px = 17, .glyph_index = 80240}, /* U+5FEB 快 */
-    {.w_px = 17, .glyph_index = 80580}, /* U+6027 性 */
-    {.w_px = 17, .glyph_index = 80920}, /* U+6062 恢 */
-    {.w_px = 17, .glyph_index = 81260}, /* U+606F 息 */
-    {.w_px = 17, .glyph_index = 81600}, /* U+60F3 想 */
-    {.w_px = 17, .glyph_index = 81940}, /* U+610F 意 */
-    {.w_px = 17, .glyph_index = 82280}, /* U+611F 感 */
-    {.w_px = 17, .glyph_index = 82620}, /* U+614B 態 */
-    {.w_px = 17, .glyph_index = 82960}, /* U+6162 慢 */
-    {.w_px = 17, .glyph_index = 83300}, /* U+61B6 憶 */
-    {.w_px = 17, .glyph_index = 83640}, /* U+61C9 應 */
-    {.w_px = 17, .glyph_index = 83980}, /* U+620A 戊 */
-    {.w_px = 17, .glyph_index = 84320}, /* U+6210 成 */
-    {.w_px = 17, .glyph_index = 84660}, /* U+6211 我 */
-    {.w_px = 17, .glyph_index = 85000}, /* U+6216 或 */
-    {.w_px = 17, .glyph_index = 85340}, /* U+622A 截 */
-    {.w_px = 17, .glyph_index = 85680}, /* U+6232 戲 */
-    {.w_px = 17, .glyph_index = 86020}, /* U+6240 所 */
-    {.w_px = 17, .glyph_index = 86360}, /* U+6247 扇 */
-    {.w_px = 17, .glyph_index = 86700}, /* U+624B 手 */
-    {.w_px = 17, .glyph_index = 87040}, /* U+624D 才 */
-    {.w_px = 17, .glyph_index = 87380}, /* U+627E 找 */
-    {.w_px = 17, .glyph_index = 87720}, /* U+628A 把 */
-    {.w_px = 17, .glyph_index = 88060}, /* U+62BD 抽 */
-    {.w_px = 17, .glyph_index = 88400}, /* U+62C6 拆 */
-    {.w_px = 17, .glyph_index = 88740}, /* U+62D2 拒 */
-    {.w_px = 17, .glyph_index = 89080}, /* U+62D4 拔 */
-    {.w_px = 17, .glyph_index = 89420}, /* U+62FE 拾 */
-    {.w_px = 17, .glyph_index = 89760}, /* U+62FF 拿 */
-    {.w_px = 17, .glyph_index = 90100}, /* U+6307 指 */
-    {.w_px = 17, .glyph_index = 90440}, /* U+6309 按 */
-    {.w_px = 17, .glyph_index = 90780}, /* U+634C 捌 */
-    {.w_px = 17, .glyph_index = 91120}, /* U+6383 掃 */
-    {.w_px = 17, .glyph_index = 91460}, /* U+6389 掉 */
-    {.w_px = 17, .glyph_index = 91800}, /* U+6392 排 */
-    {.w_px = 17, .glyph_index = 92140}, /* U+639B 掛 */
-    {.w_px = 17, .glyph_index = 92480}, /* U+63A2 探 */
-    {.w_px = 17, .glyph_index = 92820}, /* U+63A5 接 */
-    {.w_px = 17, .glyph_index = 93160}, /* U+63A7 控 */
-    {.w_px = 17, .glyph_index = 93500}, /* U+63CF 描 */
-    {.w_px = 17, .glyph_index = 93840}, /* U+63D0 提 */
-    {.w_px = 17, .glyph_index = 94180}, /* U+63D2 插 */
-    {.w_px = 17, .glyph_index = 94520}, /* U+63DB 換 */
-    {.w_px = 17, .glyph_index = 94860}, /* U+63F4 援 */
-    {.w_px = 17, .glyph_index = 95200}, /* U+640D 損 */
-    {.w_px = 17, .glyph_index = 95540}, /* U+641C 搜 */
-    {.w_px = 17, .glyph_index = 95880}, /* U+642C 搬 */
-    {.w_px = 17, .glyph_index = 96220}, /* U+642D 搭 */
-    {.w_px = 17, .glyph_index = 96560}, /* U+64C7 擇 */
-    {.w_px = 17, .glyph_index = 96900}, /* U+64CD 操 */
-    {.w_px = 17, .glyph_index = 97240}, /* U+64EC 擬 */
-    {.w_px = 17, .glyph_index = 97580}, /* U+64F4 擴 */
-    {.w_px = 17, .glyph_index = 97920}, /* U+652F 支 */
-    {.w_px = 17, .glyph_index = 98260}, /* U+6536 收 */
-    {.w_px = 17, .glyph_index = 98600}, /* U+6539 改 */
-    {.w_px = 17, .glyph_index = 98940}, /* U+653E 放 */
-    {.w_px = 17, .glyph_index = 99280}, /* U+6548 效 */
-    {.w_px = 17, .glyph_index = 99620}, /* U+6557 敗 */
-    {.w_px = 17, .glyph_index = 99960}, /* U+6574 整 */
-    {.w_px = 17, .glyph_index = 100300}, /* U+6578 數 */
-    {.w_px = 17, .glyph_index = 100640}, /* U+6587 文 */
-    {.w_px = 17, .glyph_index = 100980}, /* U+6599 料 */
-    {.w_px = 17, .glyph_index = 101320}, /* U+65B0 新 */
-    {.w_px = 17, .glyph_index = 101660}, /* U+65B7 斷 */
-    {.w_px = 17, .glyph_index = 102000}, /* U+65B9 方 */
-    {.w_px = 17, .glyph_index = 102340}, /* U+65BC 於 */
-    {.w_px = 17, .glyph_index = 102680}, /* U+65E5 日 */
-    {.w_px = 17, .glyph_index = 103020}, /* U+65E9 早 */
-    {.w_px = 17, .glyph_index = 103360}, /* U+660E 明 */
-    {.w_px = 17, .glyph_index = 103700}, /* U+661F 星 */
-    {.w_px = 17, .glyph_index = 104040}, /* U+6620 映 */
-    {.w_px = 17, .glyph_index = 104380}, /* U+6625 春 */
-    {.w_px = 17, .glyph_index = 104720}, /* U+6628 昨 */
-    {.w_px = 17, .glyph_index = 105060}, /* U+662F 是 */
-    {.w_px = 17, .glyph_index = 105400}, /* U+6642 時 */
-    {.w_px = 17, .glyph_index = 105740}, /* U+665A 晚 */
-    {.w_px = 17, .glyph_index = 106080}, /* U+666F 景 */
-    {.w_px = 17, .glyph_index = 106420}, /* U+6676 晶 */
-    {.w_px = 17, .glyph_index = 106760}, /* U+6697 暗 */
-    {.w_px = 17, .glyph_index = 107100}, /* U+66AB 暫 */
-    {.w_px = 17, .glyph_index = 107440}, /* U+66F4 更 */
-    {.w_px = 17, .glyph_index = 107780}, /* U+66FF 替 */
-    {.w_px = 17, .glyph_index = 108120}, /* U+6700 最 */
-    {.w_px = 17, .glyph_index = 108460}, /* U+6703 會 */
-    {.w_px = 17, .glyph_index = 108800}, /* U+6708 月 */
-    {.w_px = 17, .glyph_index = 109140}, /* U+6709 有 */
-    {.w_px = 17, .glyph_index = 109480}, /* U+670D 服 */
-    {.w_px = 17, .glyph_index = 109820}, /* U+671F 期 */
-    {.w_px = 17, .glyph_index = 110160}, /* U+672A 未 */
-    {.w_px = 17, .glyph_index = 110500}, /* U+672C 本 */
-    {.w_px = 17, .glyph_index = 110840}, /* U+675F 束 */
-    {.w_px = 17, .glyph_index = 111180}, /* U+6771 東 */
-    {.w_px = 17, .glyph_index = 111520}, /* U+677F 板 */
-    {.w_px = 17, .glyph_index = 111860}, /* U+6790 析 */
-    {.w_px = 17, .glyph_index = 112200}, /* U+679C 果 */
-    {.w_px = 17, .glyph_index = 112540}, /* U+67D2 柒 */
-    {.w_px = 17, .glyph_index = 112880}, /* U+67E5 查 */
-    {.w_px = 17, .glyph_index = 113220}, /* U+6821 校 */
-    {.w_px = 17, .glyph_index = 113560}, /* U+6838 核 */
-    {.w_px = 17, .glyph_index = 113900}, /* U+6839 根 */
-    {.w_px = 17, .glyph_index = 114240}, /* U+683C 格 */
-    {.w_px = 17, .glyph_index = 114580}, /* U+6848 案 */
-    {.w_px = 17, .glyph_index = 114920}, /* U+684C 桌 */
-    {.w_px = 17, .glyph_index = 115260}, /* U+696D 業 */
-    {.w_px = 17, .glyph_index = 115600}, /* U+69FD 槽 */
-    {.w_px = 17, .glyph_index = 115940}, /* U+6A19 標 */
-    {.w_px = 17, .glyph_index = 116280}, /* U+6A21 模 */
-    {.w_px = 17, .glyph_index = 116620}, /* U+6A23 樣 */
-    {.w_px = 17, .glyph_index = 116960}, /* U+6A5F 機 */
-    {.w_px = 17, .glyph_index = 117300}, /* U+6A94 檔 */
-    {.w_px = 17, .glyph_index = 117640}, /* U+6AA2 檢 */
-    {.w_px = 17, .glyph_index = 117980}, /* U+6B0A 權 */
-    {.w_px = 17, .glyph_index = 118320}, /* U+6B21 次 */
-    {.w_px = 17, .glyph_index = 118660}, /* U+6B61 歡 */
-    {.w_px = 17, .glyph_index = 119000}, /* U+6B62 止 */
-    {.w_px = 17, .glyph_index = 119340}, /* U+6B63 正 */
-    {.w_px = 17, .glyph_index = 119680}, /* U+6B65 步 */
+    {.w_px = 17, .glyph_index = 66980}, /* U+5C07 將 */
+    {.w_px = 17, .glyph_index = 67320}, /* U+5C0B 尋 */
+    {.w_px = 17, .glyph_index = 67660}, /* U+5C0D 對 */
+    {.w_px = 17, .glyph_index = 68000}, /* U+5C0F 小 */
+    {.w_px = 17, .glyph_index = 68340}, /* U+5C11 少 */
+    {.w_px = 17, .glyph_index = 68680}, /* U+5C31 就 */
+    {.w_px = 17, .glyph_index = 69020}, /* U+5C64 層 */
+    {.w_px = 17, .glyph_index = 69360}, /* U+5C6C 屬 */
+    {.w_px = 17, .glyph_index = 69700}, /* U+5DE5 工 */
+    {.w_px = 17, .glyph_index = 70040}, /* U+5DE6 左 */
+    {.w_px = 17, .glyph_index = 70380}, /* U+5DF1 己 */
+    {.w_px = 17, .glyph_index = 70720}, /* U+5DF2 已 */
+    {.w_px = 17, .glyph_index = 71060}, /* U+5E33 帳 */
+    {.w_px = 17, .glyph_index = 71400}, /* U+5E36 帶 */
+    {.w_px = 17, .glyph_index = 71740}, /* U+5E38 常 */
+    {.w_px = 17, .glyph_index = 72080}, /* U+5E55 幕 */
+    {.w_px = 17, .glyph_index = 72420}, /* U+5E6B 幫 */
+    {.w_px = 17, .glyph_index = 72760}, /* U+5E73 平 */
+    {.w_px = 17, .glyph_index = 73100}, /* U+5E74 年 */
+    {.w_px = 17, .glyph_index = 73440}, /* U+5E9A 庚 */
+    {.w_px = 17, .glyph_index = 73780}, /* U+5EA6 度 */
+    {.w_px = 17, .glyph_index = 74120}, /* U+5EA7 座 */
+    {.w_px = 17, .glyph_index = 74460}, /* U+5EE0 廠 */
+    {.w_px = 17, .glyph_index = 74800}, /* U+5EFA 建 */
+    {.w_px = 17, .glyph_index = 75140}, /* U+5F0F 式 */
+    {.w_px = 17, .glyph_index = 75480}, /* U+5F37 強 */
+    {.w_px = 17, .glyph_index = 75820}, /* U+5F62 形 */
+    {.w_px = 17, .glyph_index = 76160}, /* U+5F69 彩 */
+    {.w_px = 17, .glyph_index = 76500}, /* U+5F71 影 */
+    {.w_px = 17, .glyph_index = 76840}, /* U+5F85 待 */
+    {.w_px = 17, .glyph_index = 77180}, /* U+5F88 很 */
+    {.w_px = 17, .glyph_index = 77520}, /* U+5F8C 後 */
+    {.w_px = 17, .glyph_index = 77860}, /* U+5F91 徑 */
+    {.w_px = 17, .glyph_index = 78200}, /* U+5F97 得 */
+    {.w_px = 17, .glyph_index = 78540}, /* U+5F9E 從 */
+    {.w_px = 17, .glyph_index = 78880}, /* U+5FA9 復 */
+    {.w_px = 17, .glyph_index = 79220}, /* U+5FC3 心 */
+    {.w_px = 17, .glyph_index = 79560}, /* U+5FC5 必 */
+    {.w_px = 17, .glyph_index = 79900}, /* U+5FEB 快 */
+    {.w_px = 17, .glyph_index = 80240}, /* U+6027 性 */
+    {.w_px = 17, .glyph_index = 80580}, /* U+6062 恢 */
+    {.w_px = 17, .glyph_index = 80920}, /* U+606F 息 */
+    {.w_px = 17, .glyph_index = 81260}, /* U+60F3 想 */
+    {.w_px = 17, .glyph_index = 81600}, /* U+610F 意 */
+    {.w_px = 17, .glyph_index = 81940}, /* U+611F 感 */
+    {.w_px = 17, .glyph_index = 82280}, /* U+614B 態 */
+    {.w_px = 17, .glyph_index = 82620}, /* U+6162 慢 */
+    {.w_px = 17, .glyph_index = 82960}, /* U+61B6 憶 */
+    {.w_px = 17, .glyph_index = 83300}, /* U+61C9 應 */
+    {.w_px = 17, .glyph_index = 83640}, /* U+620A 戊 */
+    {.w_px = 17, .glyph_index = 83980}, /* U+6210 成 */
+    {.w_px = 17, .glyph_index = 84320}, /* U+6211 我 */
+    {.w_px = 17, .glyph_index = 84660}, /* U+6216 或 */
+    {.w_px = 17, .glyph_index = 85000}, /* U+622A 截 */
+    {.w_px = 17, .glyph_index = 85340}, /* U+6232 戲 */
+    {.w_px = 17, .glyph_index = 85680}, /* U+6240 所 */
+    {.w_px = 17, .glyph_index = 86020}, /* U+6247 扇 */
+    {.w_px = 17, .glyph_index = 86360}, /* U+624B 手 */
+    {.w_px = 17, .glyph_index = 86700}, /* U+624D 才 */
+    {.w_px = 17, .glyph_index = 87040}, /* U+627E 找 */
+    {.w_px = 17, .glyph_index = 87380}, /* U+628A 把 */
+    {.w_px = 17, .glyph_index = 87720}, /* U+62BD 抽 */
+    {.w_px = 17, .glyph_index = 88060}, /* U+62C6 拆 */
+    {.w_px = 17, .glyph_index = 88400}, /* U+62D2 拒 */
+    {.w_px = 17, .glyph_index = 88740}, /* U+62D4 拔 */
+    {.w_px = 17, .glyph_index = 89080}, /* U+62FE 拾 */
+    {.w_px = 17, .glyph_index = 89420}, /* U+62FF 拿 */
+    {.w_px = 17, .glyph_index = 89760}, /* U+6307 指 */
+    {.w_px = 17, .glyph_index = 90100}, /* U+6309 按 */
+    {.w_px = 17, .glyph_index = 90440}, /* U+634C 捌 */
+    {.w_px = 17, .glyph_index = 90780}, /* U+6383 掃 */
+    {.w_px = 17, .glyph_index = 91120}, /* U+6389 掉 */
+    {.w_px = 17, .glyph_index = 91460}, /* U+6392 排 */
+    {.w_px = 17, .glyph_index = 91800}, /* U+639B 掛 */
+    {.w_px = 17, .glyph_index = 92140}, /* U+63A2 探 */
+    {.w_px = 17, .glyph_index = 92480}, /* U+63A5 接 */
+    {.w_px = 17, .glyph_index = 92820}, /* U+63A7 控 */
+    {.w_px = 17, .glyph_index = 93160}, /* U+63CF 描 */
+    {.w_px = 17, .glyph_index = 93500}, /* U+63D0 提 */
+    {.w_px = 17, .glyph_index = 93840}, /* U+63D2 插 */
+    {.w_px = 17, .glyph_index = 94180}, /* U+63DB 換 */
+    {.w_px = 17, .glyph_index = 94520}, /* U+63F4 援 */
+    {.w_px = 17, .glyph_index = 94860}, /* U+640D 損 */
+    {.w_px = 17, .glyph_index = 95200}, /* U+641C 搜 */
+    {.w_px = 17, .glyph_index = 95540}, /* U+642C 搬 */
+    {.w_px = 17, .glyph_index = 95880}, /* U+642D 搭 */
+    {.w_px = 17, .glyph_index = 96220}, /* U+64C7 擇 */
+    {.w_px = 17, .glyph_index = 96560}, /* U+64CD 操 */
+    {.w_px = 17, .glyph_index = 96900}, /* U+64EC 擬 */
+    {.w_px = 17, .glyph_index = 97240}, /* U+64F4 擴 */
+    {.w_px = 17, .glyph_index = 97580}, /* U+652F 支 */
+    {.w_px = 17, .glyph_index = 97920}, /* U+6536 收 */
+    {.w_px = 17, .glyph_index = 98260}, /* U+6539 改 */
+    {.w_px = 17, .glyph_index = 98600}, /* U+653E 放 */
+    {.w_px = 17, .glyph_index = 98940}, /* U+6548 效 */
+    {.w_px = 17, .glyph_index = 99280}, /* U+6557 敗 */
+    {.w_px = 17, .glyph_index = 99620}, /* U+6574 整 */
+    {.w_px = 17, .glyph_index = 99960}, /* U+6578 數 */
+    {.w_px = 17, .glyph_index = 100300}, /* U+6587 文 */
+    {.w_px = 17, .glyph_index = 100640}, /* U+6599 料 */
+    {.w_px = 17, .glyph_index = 100980}, /* U+65B0 新 */
+    {.w_px = 17, .glyph_index = 101320}, /* U+65B7 斷 */
+    {.w_px = 17, .glyph_index = 101660}, /* U+65B9 方 */
+    {.w_px = 17, .glyph_index = 102000}, /* U+65BC 於 */
+    {.w_px = 17, .glyph_index = 102340}, /* U+65E5 日 */
+    {.w_px = 17, .glyph_index = 102680}, /* U+65E9 早 */
+    {.w_px = 17, .glyph_index = 103020}, /* U+660E 明 */
+    {.w_px = 17, .glyph_index = 103360}, /* U+661F 星 */
+    {.w_px = 17, .glyph_index = 103700}, /* U+6620 映 */
+    {.w_px = 17, .glyph_index = 104040}, /* U+6625 春 */
+    {.w_px = 17, .glyph_index = 104380}, /* U+6628 昨 */
+    {.w_px = 17, .glyph_index = 104720}, /* U+662F 是 */
+    {.w_px = 17, .glyph_index = 105060}, /* U+6642 時 */
+    {.w_px = 17, .glyph_index = 105400}, /* U+665A 晚 */
+    {.w_px = 17, .glyph_index = 105740}, /* U+666F 景 */
+    {.w_px = 17, .glyph_index = 106080}, /* U+6676 晶 */
+    {.w_px = 17, .glyph_index = 106420}, /* U+6697 暗 */
+    {.w_px = 17, .glyph_index = 106760}, /* U+66AB 暫 */
+    {.w_px = 17, .glyph_index = 107100}, /* U+66F4 更 */
+    {.w_px = 17, .glyph_index = 107440}, /* U+66FF 替 */
+    {.w_px = 17, .glyph_index = 107780}, /* U+6700 最 */
+    {.w_px = 17, .glyph_index = 108120}, /* U+6703 會 */
+    {.w_px = 17, .glyph_index = 108460}, /* U+6708 月 */
+    {.w_px = 17, .glyph_index = 108800}, /* U+6709 有 */
+    {.w_px = 17, .glyph_index = 109140}, /* U+670D 服 */
+    {.w_px = 17, .glyph_index = 109480}, /* U+671F 期 */
+    {.w_px = 17, .glyph_index = 109820}, /* U+672A 未 */
+    {.w_px = 17, .glyph_index = 110160}, /* U+672C 本 */
+    {.w_px = 17, .glyph_index = 110500}, /* U+675F 束 */
+    {.w_px = 17, .glyph_index = 110840}, /* U+6771 東 */
+    {.w_px = 17, .glyph_index = 111180}, /* U+677F 板 */
+    {.w_px = 17, .glyph_index = 111520}, /* U+6790 析 */
+    {.w_px = 17, .glyph_index = 111860}, /* U+679C 果 */
+    {.w_px = 17, .glyph_index = 112200}, /* U+67D2 柒 */
+    {.w_px = 17, .glyph_index = 112540}, /* U+67E5 查 */
+    {.w_px = 17, .glyph_index = 112880}, /* U+6821 校 */
+    {.w_px = 17, .glyph_index = 113220}, /* U+6838 核 */
+    {.w_px = 17, .glyph_index = 113560}, /* U+6839 根 */
+    {.w_px = 17, .glyph_index = 113900}, /* U+683C 格 */
+    {.w_px = 17, .glyph_index = 114240}, /* U+6848 案 */
+    {.w_px = 17, .glyph_index = 114580}, /* U+684C 桌 */
+    {.w_px = 17, .glyph_index = 114920}, /* U+696D 業 */
+    {.w_px = 17, .glyph_index = 115260}, /* U+69FD 槽 */
+    {.w_px = 17, .glyph_index = 115600}, /* U+6A19 標 */
+    {.w_px = 17, .glyph_index = 115940}, /* U+6A21 模 */
+    {.w_px = 17, .glyph_index = 116280}, /* U+6A23 樣 */
+    {.w_px = 17, .glyph_index = 116620}, /* U+6A5F 機 */
+    {.w_px = 17, .glyph_index = 116960}, /* U+6A94 檔 */
+    {.w_px = 17, .glyph_index = 117300}, /* U+6AA2 檢 */
+    {.w_px = 17, .glyph_index = 117640}, /* U+6B0A 權 */
+    {.w_px = 17, .glyph_index = 117980}, /* U+6B21 次 */
+    {.w_px = 17, .glyph_index = 118320}, /* U+6B61 歡 */
+    {.w_px = 17, .glyph_index = 118660}, /* U+6B62 止 */
+    {.w_px = 17, .glyph_index = 119000}, /* U+6B63 正 */
+    {.w_px = 17, .glyph_index = 119340}, /* U+6B65 步 */
+    {.w_px = 17, .glyph_index = 119680}, /* U+6B78 歸 */
     {.w_px = 17, .glyph_index = 120020}, /* U+6BB5 段 */
     {.w_px = 17, .glyph_index = 120360}, /* U+6BC0 毀 */
     {.w_px = 17, .glyph_index = 120700}, /* U+6BCF 每 */
@@ -764,20 +764,20 @@ static const uint32_t cjk_tw_30_unicode[] = {
     0x5713, 0x5716, 0x5728, 0x5730, 0x5740, 0x5747, 0x578B, 0x57DF, 0x57F7, 0x57FA, 0x5831, 0x584A,
     0x58D3, 0x58DE, 0x58EC, 0x58F9, 0x58FD, 0x590F, 0x5916, 0x591A, 0x5927, 0x5929, 0x592A, 0x5931,
     0x593E, 0x5957, 0x5979, 0x597D, 0x5982, 0x59CB, 0x5B57, 0x5B58, 0x5B83, 0x5B89, 0x5B8C, 0x5B9A,
-    0x5BB9, 0x5BC6, 0x5BE6, 0x5BEB, 0x5BEC, 0x5C01, 0x5C07, 0x5C0B, 0x5C0D, 0x5C0F, 0x5C11, 0x5C31,
-    0x5C64, 0x5C6C, 0x5DE5, 0x5DE6, 0x5DF1, 0x5DF2, 0x5E33, 0x5E36, 0x5E38, 0x5E55, 0x5E6B, 0x5E73,
-    0x5E74, 0x5E9A, 0x5EA6, 0x5EA7, 0x5EE0, 0x5EFA, 0x5F0F, 0x5F37, 0x5F62, 0x5F69, 0x5F71, 0x5F85,
-    0x5F88, 0x5F8C, 0x5F91, 0x5F97, 0x5F9E, 0x5FA9, 0x5FC3, 0x5FC5, 0x5FEB, 0x6027, 0x6062, 0x606F,
-    0x60F3, 0x610F, 0x611F, 0x614B, 0x6162, 0x61B6, 0x61C9, 0x620A, 0x6210, 0x6211, 0x6216, 0x622A,
-    0x6232, 0x6240, 0x6247, 0x624B, 0x624D, 0x627E, 0x628A, 0x62BD, 0x62C6, 0x62D2, 0x62D4, 0x62FE,
-    0x62FF, 0x6307, 0x6309, 0x634C, 0x6383, 0x6389, 0x6392, 0x639B, 0x63A2, 0x63A5, 0x63A7, 0x63CF,
-    0x63D0, 0x63D2, 0x63DB, 0x63F4, 0x640D, 0x641C, 0x642C, 0x642D, 0x64C7, 0x64CD, 0x64EC, 0x64F4,
-    0x652F, 0x6536, 0x6539, 0x653E, 0x6548, 0x6557, 0x6574, 0x6578, 0x6587, 0x6599, 0x65B0, 0x65B7,
-    0x65B9, 0x65BC, 0x65E5, 0x65E9, 0x660E, 0x661F, 0x6620, 0x6625, 0x6628, 0x662F, 0x6642, 0x665A,
-    0x666F, 0x6676, 0x6697, 0x66AB, 0x66F4, 0x66FF, 0x6700, 0x6703, 0x6708, 0x6709, 0x670D, 0x671F,
-    0x672A, 0x672C, 0x675F, 0x6771, 0x677F, 0x6790, 0x679C, 0x67D2, 0x67E5, 0x6821, 0x6838, 0x6839,
-    0x683C, 0x6848, 0x684C, 0x696D, 0x69FD, 0x6A19, 0x6A21, 0x6A23, 0x6A5F, 0x6A94, 0x6AA2, 0x6B0A,
-    0x6B21, 0x6B61, 0x6B62, 0x6B63, 0x6B65, 0x6BB5, 0x6BC0, 0x6BCF, 0x6BD4, 0x6C23, 0x6C38, 0x6C42,
+    0x5BB9, 0x5BC6, 0x5BE6, 0x5BEB, 0x5BEC, 0x5C07, 0x5C0B, 0x5C0D, 0x5C0F, 0x5C11, 0x5C31, 0x5C64,
+    0x5C6C, 0x5DE5, 0x5DE6, 0x5DF1, 0x5DF2, 0x5E33, 0x5E36, 0x5E38, 0x5E55, 0x5E6B, 0x5E73, 0x5E74,
+    0x5E9A, 0x5EA6, 0x5EA7, 0x5EE0, 0x5EFA, 0x5F0F, 0x5F37, 0x5F62, 0x5F69, 0x5F71, 0x5F85, 0x5F88,
+    0x5F8C, 0x5F91, 0x5F97, 0x5F9E, 0x5FA9, 0x5FC3, 0x5FC5, 0x5FEB, 0x6027, 0x6062, 0x606F, 0x60F3,
+    0x610F, 0x611F, 0x614B, 0x6162, 0x61B6, 0x61C9, 0x620A, 0x6210, 0x6211, 0x6216, 0x622A, 0x6232,
+    0x6240, 0x6247, 0x624B, 0x624D, 0x627E, 0x628A, 0x62BD, 0x62C6, 0x62D2, 0x62D4, 0x62FE, 0x62FF,
+    0x6307, 0x6309, 0x634C, 0x6383, 0x6389, 0x6392, 0x639B, 0x63A2, 0x63A5, 0x63A7, 0x63CF, 0x63D0,
+    0x63D2, 0x63DB, 0x63F4, 0x640D, 0x641C, 0x642C, 0x642D, 0x64C7, 0x64CD, 0x64EC, 0x64F4, 0x652F,
+    0x6536, 0x6539, 0x653E, 0x6548, 0x6557, 0x6574, 0x6578, 0x6587, 0x6599, 0x65B0, 0x65B7, 0x65B9,
+    0x65BC, 0x65E5, 0x65E9, 0x660E, 0x661F, 0x6620, 0x6625, 0x6628, 0x662F, 0x6642, 0x665A, 0x666F,
+    0x6676, 0x6697, 0x66AB, 0x66F4, 0x66FF, 0x6700, 0x6703, 0x6708, 0x6709, 0x670D, 0x671F, 0x672A,
+    0x672C, 0x675F, 0x6771, 0x677F, 0x6790, 0x679C, 0x67D2, 0x67E5, 0x6821, 0x6838, 0x6839, 0x683C,
+    0x6848, 0x684C, 0x696D, 0x69FD, 0x6A19, 0x6A21, 0x6A23, 0x6A5F, 0x6A94, 0x6AA2, 0x6B0A, 0x6B21,
+    0x6B61, 0x6B62, 0x6B63, 0x6B65, 0x6B78, 0x6BB5, 0x6BC0, 0x6BCF, 0x6BD4, 0x6C23, 0x6C38, 0x6C42,
     0x6C60, 0x6C92, 0x6CD5, 0x6CE8, 0x6D1E, 0x6D41, 0x6D88, 0x6DF7, 0x6E05, 0x6E2C, 0x6E4A, 0x6E90,
     0x6E96, 0x6EAB, 0x6EFF, 0x6F0F, 0x7070, 0x70BA, 0x7121, 0x7194, 0x71B1, 0x71D2, 0x7247, 0x7248,
     0x7259, 0x7279, 0x72C0, 0x7368, 0x7387, 0x7396, 0x73FE, 0x7406, 0x751A, 0x751F, 0x7522, 0x7528,
@@ -1000,162 +1000,162 @@ static const lv_font_glyph_dsc_t cjk_tw_30_dsc[] = {
     {.w_px = 25, .glyph_index = 145500}, /* U+5BE6 實 */
     {.w_px = 25, .glyph_index = 146250}, /* U+5BEB 寫 */
     {.w_px = 25, .glyph_index = 147000}, /* U+5BEC 寬 */
-    {.w_px = 25, .glyph_index = 147750}, /* U+5C01 封 */
-    {.w_px = 25, .glyph_index = 148500}, /* U+5C07 將 */
-    {.w_px = 25, .glyph_index = 149250}, /* U+5C0B 尋 */
-    {.w_px = 25, .glyph_index = 150000}, /* U+5C0D 對 */
-    {.w_px = 25, .glyph_index = 150750}, /* U+5C0F 小 */
-    {.w_px = 25, .glyph_index = 151500}, /* U+5C11 少 */
-    {.w_px = 25, .glyph_index = 152250}, /* U+5C31 就 */
-    {.w_px = 25, .glyph_index = 153000}, /* U+5C64 層 */
-    {.w_px = 25, .glyph_index = 153750}, /* U+5C6C 屬 */
-    {.w_px = 25, .glyph_index = 154500}, /* U+5DE5 工 */
-    {.w_px = 25, .glyph_index = 155250}, /* U+5DE6 左 */
-    {.w_px = 25, .glyph_index = 156000}, /* U+5DF1 己 */
-    {.w_px = 25, .glyph_index = 156750}, /* U+5DF2 已 */
-    {.w_px = 25, .glyph_index = 157500}, /* U+5E33 帳 */
-    {.w_px = 25, .glyph_index = 158250}, /* U+5E36 帶 */
-    {.w_px = 25, .glyph_index = 159000}, /* U+5E38 常 */
-    {.w_px = 25, .glyph_index = 159750}, /* U+5E55 幕 */
-    {.w_px = 25, .glyph_index = 160500}, /* U+5E6B 幫 */
-    {.w_px = 25, .glyph_index = 161250}, /* U+5E73 平 */
-    {.w_px = 25, .glyph_index = 162000}, /* U+5E74 年 */
-    {.w_px = 25, .glyph_index = 162750}, /* U+5E9A 庚 */
-    {.w_px = 25, .glyph_index = 163500}, /* U+5EA6 度 */
-    {.w_px = 25, .glyph_index = 164250}, /* U+5EA7 座 */
-    {.w_px = 25, .glyph_index = 165000}, /* U+5EE0 廠 */
-    {.w_px = 25, .glyph_index = 165750}, /* U+5EFA 建 */
-    {.w_px = 25, .glyph_index = 166500}, /* U+5F0F 式 */
-    {.w_px = 25, .glyph_index = 167250}, /* U+5F37 強 */
-    {.w_px = 25, .glyph_index = 168000}, /* U+5F62 形 */
-    {.w_px = 25, .glyph_index = 168750}, /* U+5F69 彩 */
-    {.w_px = 25, .glyph_index = 169500}, /* U+5F71 影 */
-    {.w_px = 25, .glyph_index = 170250}, /* U+5F85 待 */
-    {.w_px = 25, .glyph_index = 171000}, /* U+5F88 很 */
-    {.w_px = 25, .glyph_index = 171750}, /* U+5F8C 後 */
-    {.w_px = 25, .glyph_index = 172500}, /* U+5F91 徑 */
-    {.w_px = 25, .glyph_index = 173250}, /* U+5F97 得 */
-    {.w_px = 25, .glyph_index = 174000}, /* U+5F9E 從 */
-    {.w_px = 25, .glyph_index = 174750}, /* U+5FA9 復 */
-    {.w_px = 25, .glyph_index = 175500}, /* U+5FC3 心 */
-    {.w_px = 25, .glyph_index = 176250}, /* U+5FC5 必 */
-    {.w_px = 25, .glyph_index = 177000}, /* U+5FEB 快 */
-    {.w_px = 25, .glyph_index = 177750}, /* U+6027 性 */
-    {.w_px = 25, .glyph_index = 178500}, /* U+6062 恢 */
-    {.w_px = 25, .glyph_index = 179250}, /* U+606F 息 */
-    {.w_px = 25, .glyph_index = 180000}, /* U+60F3 想 */
-    {.w_px = 25, .glyph_index = 180750}, /* U+610F 意 */
-    {.w_px = 25, .glyph_index = 181500}, /* U+611F 感 */
-    {.w_px = 25, .glyph_index = 182250}, /* U+614B 態 */
-    {.w_px = 25, .glyph_index = 183000}, /* U+6162 慢 */
-    {.w_px = 25, .glyph_index = 183750}, /* U+61B6 憶 */
-    {.w_px = 25, .glyph_index = 184500}, /* U+61C9 應 */
-    {.w_px = 25, .glyph_index = 185250}, /* U+620A 戊 */
-    {.w_px = 25, .glyph_index = 186000}, /* U+6210 成 */
-    {.w_px = 25, .glyph_index = 186750}, /* U+6211 我 */
-    {.w_px = 25, .glyph_index = 187500}, /* U+6216 或 */
-    {.w_px = 25, .glyph_index = 188250}, /* U+622A 截 */
-    {.w_px = 25, .glyph_index = 189000}, /* U+6232 戲 */
-    {.w_px = 25, .glyph_index = 189750}, /* U+6240 所 */
-    {.w_px = 25, .glyph_index = 190500}, /* U+6247 扇 */
-    {.w_px = 25, .glyph_index = 191250}, /* U+624B 手 */
-    {.w_px = 25, .glyph_index = 192000}, /* U+624D 才 */
-    {.w_px = 25, .glyph_index = 192750}, /* U+627E 找 */
-    {.w_px = 25, .glyph_index = 193500}, /* U+628A 把 */
-    {.w_px = 25, .glyph_index = 194250}, /* U+62BD 抽 */
-    {.w_px = 25, .glyph_index = 195000}, /* U+62C6 拆 */
-    {.w_px = 25, .glyph_index = 195750}, /* U+62D2 拒 */
-    {.w_px = 25, .glyph_index = 196500}, /* U+62D4 拔 */
-    {.w_px = 25, .glyph_index = 197250}, /* U+62FE 拾 */
-    {.w_px = 25, .glyph_index = 198000}, /* U+62FF 拿 */
-    {.w_px = 25, .glyph_index = 198750}, /* U+6307 指 */
-    {.w_px = 25, .glyph_index = 199500}, /* U+6309 按 */
-    {.w_px = 25, .glyph_index = 200250}, /* U+634C 捌 */
-    {.w_px = 25, .glyph_index = 201000}, /* U+6383 掃 */
-    {.w_px = 25, .glyph_index = 201750}, /* U+6389 掉 */
-    {.w_px = 25, .glyph_index = 202500}, /* U+6392 排 */
-    {.w_px = 25, .glyph_index = 203250}, /* U+639B 掛 */
-    {.w_px = 25, .glyph_index = 204000}, /* U+63A2 探 */
-    {.w_px = 25, .glyph_index = 204750}, /* U+63A5 接 */
-    {.w_px = 25, .glyph_index = 205500}, /* U+63A7 控 */
-    {.w_px = 25, .glyph_index = 206250}, /* U+63CF 描 */
-    {.w_px = 25, .glyph_index = 207000}, /* U+63D0 提 */
-    {.w_px = 25, .glyph_index = 207750}, /* U+63D2 插 */
-    {.w_px = 25, .glyph_index = 208500}, /* U+63DB 換 */
-    {.w_px = 25, .glyph_index = 209250}, /* U+63F4 援 */
-    {.w_px = 25, .glyph_index = 210000}, /* U+640D 損 */
-    {.w_px = 25, .glyph_index = 210750}, /* U+641C 搜 */
-    {.w_px = 25, .glyph_index = 211500}, /* U+642C 搬 */
-    {.w_px = 25, .glyph_index = 212250}, /* U+642D 搭 */
-    {.w_px = 25, .glyph_index = 213000}, /* U+64C7 擇 */
-    {.w_px = 25, .glyph_index = 213750}, /* U+64CD 操 */
-    {.w_px = 25, .glyph_index = 214500}, /* U+64EC 擬 */
-    {.w_px = 25, .glyph_index = 215250}, /* U+64F4 擴 */
-    {.w_px = 25, .glyph_index = 216000}, /* U+652F 支 */
-    {.w_px = 25, .glyph_index = 216750}, /* U+6536 收 */
-    {.w_px = 25, .glyph_index = 217500}, /* U+6539 改 */
-    {.w_px = 25, .glyph_index = 218250}, /* U+653E 放 */
-    {.w_px = 25, .glyph_index = 219000}, /* U+6548 效 */
-    {.w_px = 25, .glyph_index = 219750}, /* U+6557 敗 */
-    {.w_px = 25, .glyph_index = 220500}, /* U+6574 整 */
-    {.w_px = 25, .glyph_index = 221250}, /* U+6578 數 */
-    {.w_px = 25, .glyph_index = 222000}, /* U+6587 文 */
-    {.w_px = 25, .glyph_index = 222750}, /* U+6599 料 */
-    {.w_px = 25, .glyph_index = 223500}, /* U+65B0 新 */
-    {.w_px = 25, .glyph_index = 224250}, /* U+65B7 斷 */
-    {.w_px = 25, .glyph_index = 225000}, /* U+65B9 方 */
-    {.w_px = 25, .glyph_index = 225750}, /* U+65BC 於 */
-    {.w_px = 25, .glyph_index = 226500}, /* U+65E5 日 */
-    {.w_px = 25, .glyph_index = 227250}, /* U+65E9 早 */
-    {.w_px = 25, .glyph_index = 228000}, /* U+660E 明 */
-    {.w_px = 25, .glyph_index = 228750}, /* U+661F 星 */
-    {.w_px = 25, .glyph_index = 229500}, /* U+6620 映 */
-    {.w_px = 25, .glyph_index = 230250}, /* U+6625 春 */
-    {.w_px = 25, .glyph_index = 231000}, /* U+6628 昨 */
-    {.w_px = 25, .glyph_index = 231750}, /* U+662F 是 */
-    {.w_px = 25, .glyph_index = 232500}, /* U+6642 時 */
-    {.w_px = 25, .glyph_index = 233250}, /* U+665A 晚 */
-    {.w_px = 25, .glyph_index = 234000}, /* U+666F 景 */
-    {.w_px = 25, .glyph_index = 234750}, /* U+6676 晶 */
-    {.w_px = 25, .glyph_index = 235500}, /* U+6697 暗 */
-    {.w_px = 25, .glyph_index = 236250}, /* U+66AB 暫 */
-    {.w_px = 25, .glyph_index = 237000}, /* U+66F4 更 */
-    {.w_px = 25, .glyph_index = 237750}, /* U+66FF 替 */
-    {.w_px = 25, .glyph_index = 238500}, /* U+6700 最 */
-    {.w_px = 25, .glyph_index = 239250}, /* U+6703 會 */
-    {.w_px = 25, .glyph_index = 240000}, /* U+6708 月 */
-    {.w_px = 25, .glyph_index = 240750}, /* U+6709 有 */
-    {.w_px = 25, .glyph_index = 241500}, /* U+670D 服 */
-    {.w_px = 25, .glyph_index = 242250}, /* U+671F 期 */
-    {.w_px = 25, .glyph_index = 243000}, /* U+672A 未 */
-    {.w_px = 25, .glyph_index = 243750}, /* U+672C 本 */
-    {.w_px = 25, .glyph_index = 244500}, /* U+675F 束 */
-    {.w_px = 25, .glyph_index = 245250}, /* U+6771 東 */
-    {.w_px = 25, .glyph_index = 246000}, /* U+677F 板 */
-    {.w_px = 25, .glyph_index = 246750}, /* U+6790 析 */
-    {.w_px = 25, .glyph_index = 247500}, /* U+679C 果 */
-    {.w_px = 25, .glyph_index = 248250}, /* U+67D2 柒 */
-    {.w_px = 25, .glyph_index = 249000}, /* U+67E5 查 */
-    {.w_px = 25, .glyph_index = 249750}, /* U+6821 校 */
-    {.w_px = 25, .glyph_index = 250500}, /* U+6838 核 */
-    {.w_px = 25, .glyph_index = 251250}, /* U+6839 根 */
-    {.w_px = 25, .glyph_index = 252000}, /* U+683C 格 */
-    {.w_px = 25, .glyph_index = 252750}, /* U+6848 案 */
-    {.w_px = 25, .glyph_index = 253500}, /* U+684C 桌 */
-    {.w_px = 25, .glyph_index = 254250}, /* U+696D 業 */
-    {.w_px = 25, .glyph_index = 255000}, /* U+69FD 槽 */
-    {.w_px = 25, .glyph_index = 255750}, /* U+6A19 標 */
-    {.w_px = 25, .glyph_index = 256500}, /* U+6A21 模 */
-    {.w_px = 25, .glyph_index = 257250}, /* U+6A23 樣 */
-    {.w_px = 25, .glyph_index = 258000}, /* U+6A5F 機 */
-    {.w_px = 25, .glyph_index = 258750}, /* U+6A94 檔 */
-    {.w_px = 25, .glyph_index = 259500}, /* U+6AA2 檢 */
-    {.w_px = 25, .glyph_index = 260250}, /* U+6B0A 權 */
-    {.w_px = 25, .glyph_index = 261000}, /* U+6B21 次 */
-    {.w_px = 25, .glyph_index = 261750}, /* U+6B61 歡 */
-    {.w_px = 25, .glyph_index = 262500}, /* U+6B62 止 */
-    {.w_px = 25, .glyph_index = 263250}, /* U+6B63 正 */
-    {.w_px = 25, .glyph_index = 264000}, /* U+6B65 步 */
+    {.w_px = 25, .glyph_index = 147750}, /* U+5C07 將 */
+    {.w_px = 25, .glyph_index = 148500}, /* U+5C0B 尋 */
+    {.w_px = 25, .glyph_index = 149250}, /* U+5C0D 對 */
+    {.w_px = 25, .glyph_index = 150000}, /* U+5C0F 小 */
+    {.w_px = 25, .glyph_index = 150750}, /* U+5C11 少 */
+    {.w_px = 25, .glyph_index = 151500}, /* U+5C31 就 */
+    {.w_px = 25, .glyph_index = 152250}, /* U+5C64 層 */
+    {.w_px = 25, .glyph_index = 153000}, /* U+5C6C 屬 */
+    {.w_px = 25, .glyph_index = 153750}, /* U+5DE5 工 */
+    {.w_px = 25, .glyph_index = 154500}, /* U+5DE6 左 */
+    {.w_px = 25, .glyph_index = 155250}, /* U+5DF1 己 */
+    {.w_px = 25, .glyph_index = 156000}, /* U+5DF2 已 */
+    {.w_px = 25, .glyph_index = 156750}, /* U+5E33 帳 */
+    {.w_px = 25, .glyph_index = 157500}, /* U+5E36 帶 */
+    {.w_px = 25, .glyph_index = 158250}, /* U+5E38 常 */
+    {.w_px = 25, .glyph_index = 159000}, /* U+5E55 幕 */
+    {.w_px = 25, .glyph_index = 159750}, /* U+5E6B 幫 */
+    {.w_px = 25, .glyph_index = 160500}, /* U+5E73 平 */
+    {.w_px = 25, .glyph_index = 161250}, /* U+5E74 年 */
+    {.w_px = 25, .glyph_index = 162000}, /* U+5E9A 庚 */
+    {.w_px = 25, .glyph_index = 162750}, /* U+5EA6 度 */
+    {.w_px = 25, .glyph_index = 163500}, /* U+5EA7 座 */
+    {.w_px = 25, .glyph_index = 164250}, /* U+5EE0 廠 */
+    {.w_px = 25, .glyph_index = 165000}, /* U+5EFA 建 */
+    {.w_px = 25, .glyph_index = 165750}, /* U+5F0F 式 */
+    {.w_px = 25, .glyph_index = 166500}, /* U+5F37 強 */
+    {.w_px = 25, .glyph_index = 167250}, /* U+5F62 形 */
+    {.w_px = 25, .glyph_index = 168000}, /* U+5F69 彩 */
+    {.w_px = 25, .glyph_index = 168750}, /* U+5F71 影 */
+    {.w_px = 25, .glyph_index = 169500}, /* U+5F85 待 */
+    {.w_px = 25, .glyph_index = 170250}, /* U+5F88 很 */
+    {.w_px = 25, .glyph_index = 171000}, /* U+5F8C 後 */
+    {.w_px = 25, .glyph_index = 171750}, /* U+5F91 徑 */
+    {.w_px = 25, .glyph_index = 172500}, /* U+5F97 得 */
+    {.w_px = 25, .glyph_index = 173250}, /* U+5F9E 從 */
+    {.w_px = 25, .glyph_index = 174000}, /* U+5FA9 復 */
+    {.w_px = 25, .glyph_index = 174750}, /* U+5FC3 心 */
+    {.w_px = 25, .glyph_index = 175500}, /* U+5FC5 必 */
+    {.w_px = 25, .glyph_index = 176250}, /* U+5FEB 快 */
+    {.w_px = 25, .glyph_index = 177000}, /* U+6027 性 */
+    {.w_px = 25, .glyph_index = 177750}, /* U+6062 恢 */
+    {.w_px = 25, .glyph_index = 178500}, /* U+606F 息 */
+    {.w_px = 25, .glyph_index = 179250}, /* U+60F3 想 */
+    {.w_px = 25, .glyph_index = 180000}, /* U+610F 意 */
+    {.w_px = 25, .glyph_index = 180750}, /* U+611F 感 */
+    {.w_px = 25, .glyph_index = 181500}, /* U+614B 態 */
+    {.w_px = 25, .glyph_index = 182250}, /* U+6162 慢 */
+    {.w_px = 25, .glyph_index = 183000}, /* U+61B6 憶 */
+    {.w_px = 25, .glyph_index = 183750}, /* U+61C9 應 */
+    {.w_px = 25, .glyph_index = 184500}, /* U+620A 戊 */
+    {.w_px = 25, .glyph_index = 185250}, /* U+6210 成 */
+    {.w_px = 25, .glyph_index = 186000}, /* U+6211 我 */
+    {.w_px = 25, .glyph_index = 186750}, /* U+6216 或 */
+    {.w_px = 25, .glyph_index = 187500}, /* U+622A 截 */
+    {.w_px = 25, .glyph_index = 188250}, /* U+6232 戲 */
+    {.w_px = 25, .glyph_index = 189000}, /* U+6240 所 */
+    {.w_px = 25, .glyph_index = 189750}, /* U+6247 扇 */
+    {.w_px = 25, .glyph_index = 190500}, /* U+624B 手 */
+    {.w_px = 25, .glyph_index = 191250}, /* U+624D 才 */
+    {.w_px = 25, .glyph_index = 192000}, /* U+627E 找 */
+    {.w_px = 25, .glyph_index = 192750}, /* U+628A 把 */
+    {.w_px = 25, .glyph_index = 193500}, /* U+62BD 抽 */
+    {.w_px = 25, .glyph_index = 194250}, /* U+62C6 拆 */
+    {.w_px = 25, .glyph_index = 195000}, /* U+62D2 拒 */
+    {.w_px = 25, .glyph_index = 195750}, /* U+62D4 拔 */
+    {.w_px = 25, .glyph_index = 196500}, /* U+62FE 拾 */
+    {.w_px = 25, .glyph_index = 197250}, /* U+62FF 拿 */
+    {.w_px = 25, .glyph_index = 198000}, /* U+6307 指 */
+    {.w_px = 25, .glyph_index = 198750}, /* U+6309 按 */
+    {.w_px = 25, .glyph_index = 199500}, /* U+634C 捌 */
+    {.w_px = 25, .glyph_index = 200250}, /* U+6383 掃 */
+    {.w_px = 25, .glyph_index = 201000}, /* U+6389 掉 */
+    {.w_px = 25, .glyph_index = 201750}, /* U+6392 排 */
+    {.w_px = 25, .glyph_index = 202500}, /* U+639B 掛 */
+    {.w_px = 25, .glyph_index = 203250}, /* U+63A2 探 */
+    {.w_px = 25, .glyph_index = 204000}, /* U+63A5 接 */
+    {.w_px = 25, .glyph_index = 204750}, /* U+63A7 控 */
+    {.w_px = 25, .glyph_index = 205500}, /* U+63CF 描 */
+    {.w_px = 25, .glyph_index = 206250}, /* U+63D0 提 */
+    {.w_px = 25, .glyph_index = 207000}, /* U+63D2 插 */
+    {.w_px = 25, .glyph_index = 207750}, /* U+63DB 換 */
+    {.w_px = 25, .glyph_index = 208500}, /* U+63F4 援 */
+    {.w_px = 25, .glyph_index = 209250}, /* U+640D 損 */
+    {.w_px = 25, .glyph_index = 210000}, /* U+641C 搜 */
+    {.w_px = 25, .glyph_index = 210750}, /* U+642C 搬 */
+    {.w_px = 25, .glyph_index = 211500}, /* U+642D 搭 */
+    {.w_px = 25, .glyph_index = 212250}, /* U+64C7 擇 */
+    {.w_px = 25, .glyph_index = 213000}, /* U+64CD 操 */
+    {.w_px = 25, .glyph_index = 213750}, /* U+64EC 擬 */
+    {.w_px = 25, .glyph_index = 214500}, /* U+64F4 擴 */
+    {.w_px = 25, .glyph_index = 215250}, /* U+652F 支 */
+    {.w_px = 25, .glyph_index = 216000}, /* U+6536 收 */
+    {.w_px = 25, .glyph_index = 216750}, /* U+6539 改 */
+    {.w_px = 25, .glyph_index = 217500}, /* U+653E 放 */
+    {.w_px = 25, .glyph_index = 218250}, /* U+6548 效 */
+    {.w_px = 25, .glyph_index = 219000}, /* U+6557 敗 */
+    {.w_px = 25, .glyph_index = 219750}, /* U+6574 整 */
+    {.w_px = 25, .glyph_index = 220500}, /* U+6578 數 */
+    {.w_px = 25, .glyph_index = 221250}, /* U+6587 文 */
+    {.w_px = 25, .glyph_index = 222000}, /* U+6599 料 */
+    {.w_px = 25, .glyph_index = 222750}, /* U+65B0 新 */
+    {.w_px = 25, .glyph_index = 223500}, /* U+65B7 斷 */
+    {.w_px = 25, .glyph_index = 224250}, /* U+65B9 方 */
+    {.w_px = 25, .glyph_index = 225000}, /* U+65BC 於 */
+    {.w_px = 25, .glyph_index = 225750}, /* U+65E5 日 */
+    {.w_px = 25, .glyph_index = 226500}, /* U+65E9 早 */
+    {.w_px = 25, .glyph_index = 227250}, /* U+660E 明 */
+    {.w_px = 25, .glyph_index = 228000}, /* U+661F 星 */
+    {.w_px = 25, .glyph_index = 228750}, /* U+6620 映 */
+    {.w_px = 25, .glyph_index = 229500}, /* U+6625 春 */
+    {.w_px = 25, .glyph_index = 230250}, /* U+6628 昨 */
+    {.w_px = 25, .glyph_index = 231000}, /* U+662F 是 */
+    {.w_px = 25, .glyph_index = 231750}, /* U+6642 時 */
+    {.w_px = 25, .glyph_index = 232500}, /* U+665A 晚 */
+    {.w_px = 25, .glyph_index = 233250}, /* U+666F 景 */
+    {.w_px = 25, .glyph_index = 234000}, /* U+6676 晶 */
+    {.w_px = 25, .glyph_index = 234750}, /* U+6697 暗 */
+    {.w_px = 25, .glyph_index = 235500}, /* U+66AB 暫 */
+    {.w_px = 25, .glyph_index = 236250}, /* U+66F4 更 */
+    {.w_px = 25, .glyph_index = 237000}, /* U+66FF 替 */
+    {.w_px = 25, .glyph_index = 237750}, /* U+6700 最 */
+    {.w_px = 25, .glyph_index = 238500}, /* U+6703 會 */
+    {.w_px = 25, .glyph_index = 239250}, /* U+6708 月 */
+    {.w_px = 25, .glyph_index = 240000}, /* U+6709 有 */
+    {.w_px = 25, .glyph_index = 240750}, /* U+670D 服 */
+    {.w_px = 25, .glyph_index = 241500}, /* U+671F 期 */
+    {.w_px = 25, .glyph_index = 242250}, /* U+672A 未 */
+    {.w_px = 25, .glyph_index = 243000}, /* U+672C 本 */
+    {.w_px = 25, .glyph_index = 243750}, /* U+675F 束 */
+    {.w_px = 25, .glyph_index = 244500}, /* U+6771 東 */
+    {.w_px = 25, .glyph_index = 245250}, /* U+677F 板 */
+    {.w_px = 25, .glyph_index = 246000}, /* U+6790 析 */
+    {.w_px = 25, .glyph_index = 246750}, /* U+679C 果 */
+    {.w_px = 25, .glyph_index = 247500}, /* U+67D2 柒 */
+    {.w_px = 25, .glyph_index = 248250}, /* U+67E5 查 */
+    {.w_px = 25, .glyph_index = 249000}, /* U+6821 校 */
+    {.w_px = 25, .glyph_index = 249750}, /* U+6838 核 */
+    {.w_px = 25, .glyph_index = 250500}, /* U+6839 根 */
+    {.w_px = 25, .glyph_index = 251250}, /* U+683C 格 */
+    {.w_px = 25, .glyph_index = 252000}, /* U+6848 案 */
+    {.w_px = 25, .glyph_index = 252750}, /* U+684C 桌 */
+    {.w_px = 25, .glyph_index = 253500}, /* U+696D 業 */
+    {.w_px = 25, .glyph_index = 254250}, /* U+69FD 槽 */
+    {.w_px = 25, .glyph_index = 255000}, /* U+6A19 標 */
+    {.w_px = 25, .glyph_index = 255750}, /* U+6A21 模 */
+    {.w_px = 25, .glyph_index = 256500}, /* U+6A23 樣 */
+    {.w_px = 25, .glyph_index = 257250}, /* U+6A5F 機 */
+    {.w_px = 25, .glyph_index = 258000}, /* U+6A94 檔 */
+    {.w_px = 25, .glyph_index = 258750}, /* U+6AA2 檢 */
+    {.w_px = 25, .glyph_index = 259500}, /* U+6B0A 權 */
+    {.w_px = 25, .glyph_index = 260250}, /* U+6B21 次 */
+    {.w_px = 25, .glyph_index = 261000}, /* U+6B61 歡 */
+    {.w_px = 25, .glyph_index = 261750}, /* U+6B62 止 */
+    {.w_px = 25, .glyph_index = 262500}, /* U+6B63 正 */
+    {.w_px = 25, .glyph_index = 263250}, /* U+6B65 步 */
+    {.w_px = 25, .glyph_index = 264000}, /* U+6B78 歸 */
     {.w_px = 25, .glyph_index = 264750}, /* U+6BB5 段 */
     {.w_px = 25, .glyph_index = 265500}, /* U+6BC0 毀 */
     {.w_px = 25, .glyph_index = 266250}, /* U+6BCF 每 */

@@ -926,7 +926,7 @@ out:
 
 static lv_res_t _create_window_unset_abit_tool(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_COPY" 修復封存屬性（所有資料夾）", NULL);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_COPY" 修復歸檔屬性（所有資料夾）", NULL);
 
 	// Disable buttons.
 	nyx_window_toggle_buttons(win, true);
@@ -974,12 +974,12 @@ static lv_res_t _create_window_unset_abit_tool(lv_obj_t *btn)
 		if (!total[0] && !total[1])
 			s_printf(txt_buf, "#96FF00 完成！不需要任何修改。#");
 		else
-			s_printf(txt_buf, "#96FF00 完成！已修復封存屬性：# #FF8000 取消 %d 個、設定 %d 個！#", total[1], total[0]);
+			s_printf(txt_buf, "#96FF00 完成！已修復歸檔屬性：# #FF8000 取消 %d 個、設定 %d 個！#", total[1], total[0]);
 
 		// Check errors.
 		if (total[2] || total[3])
 		{
-			s_printf(txt_buf, "\n\n#FFDD00 錯誤：資料夾存取 %d 次、封存屬性修復 %d 次！#\n"
+			s_printf(txt_buf, "\n\n#FFDD00 錯誤：資料夾存取 %d 次、歸檔屬性修復 %d 次！#\n"
 					          "#FFDD00 建議檢查檔案系統是否有錯誤。#",
 					          total[2], total[3]);
 		}
@@ -1658,16 +1658,16 @@ static void _create_tab_tools_arc_rcm_pkg12(lv_theme_t *th, lv_obj_t *parent)
 	}
 	lv_obj_t *label_btn = lv_label_create(btn, NULL);
 	lv_btn_set_fit(btn, true, true);
-	lv_label_set_static_text(label_btn, SYMBOL_DIRECTORY"  修復封存屬性");
+	lv_label_set_static_text(label_btn, SYMBOL_DIRECTORY"  修復歸檔屬性");
 	lv_obj_align(btn, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 4);
 	lv_btn_set_action(btn, LV_BTN_ACTION_CLICK, _create_window_unset_abit_tool);
 
 	lv_obj_t *label_txt2 = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_txt2, true);
 	lv_label_set_static_text(label_txt2,
-		"修復所有資料夾的封存屬性，包含\n"
+		"修復所有資料夾的歸檔屬性，包含\n"
 		"根目錄和虛擬系統的 \'Nintendo\' 資料夾。\n"
-		"#C7EA46 會替名稱帶有 ##FF8000 .[副檔名]##C7EA46  的資料夾設定封存屬性#\n"
+		"#C7EA46 會替名稱帶有 ##FF8000 .[副檔名]##C7EA46  的資料夾設定歸檔屬性#\n"
 		"#FF8000 出現資料損毀訊息時使用。#");
 	lv_obj_set_style(label_txt2, &hint_small_style);
 	lv_obj_align(label_txt2, btn, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
@@ -1793,7 +1793,7 @@ void create_tab_tools(lv_theme_t *th, lv_obj_t *parent)
 	lv_tabview_set_btns_pos(tv, LV_TABVIEW_BTNS_POS_BOTTOM);
 
 	lv_obj_t *tab1= lv_tabview_add_tab(tv, "eMMC "SYMBOL_DOT" SD 分割 "SYMBOL_DOT" USB");
-	lv_obj_t *tab2 = lv_tabview_add_tab(tv, "封存屬性 "SYMBOL_DOT" RCM "SYMBOL_DOT" 觸控 "SYMBOL_DOT" Pkg1/2");
+	lv_obj_t *tab2 = lv_tabview_add_tab(tv, "歸檔屬性 "SYMBOL_DOT" RCM "SYMBOL_DOT" 觸控 "SYMBOL_DOT" Pkg1/2");
 
 	lv_obj_t *line_sep = lv_line_create(tv, NULL);
 	static const lv_point_t line_pp[] = { {0, 0}, { 0, LV_DPI / 4} };
