@@ -93,6 +93,10 @@ void lv_font_builtin_init(void)
 #if USE_HEKATE_SYMBOL_120 != 0
 	lv_font_add(&hekate_symbol_120, NULL);
 #endif
+
+	/* 繁體中文字型：必須最後加入，且每個大小只能加一次（否則字型鏈會形成迴圈） */
+	lv_font_add(&cjk_tw_20, &interui_20);
+	lv_font_add(&cjk_tw_30, &interui_30);
 }
 
 /**********************

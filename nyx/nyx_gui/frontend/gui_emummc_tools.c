@@ -57,9 +57,9 @@ static void _create_window_emummc()
 
 	lv_obj_t *win;
 	if (!mbr_ctx.part_idx)
-		win = nyx_create_standard_window(SYMBOL_DRIVE"  Create SD File emuMMC", _action_emummc_window_close);
+		win = nyx_create_standard_window(SYMBOL_DRIVE"  建立 SD 檔案型虛擬系統", _action_emummc_window_close);
 	else
-		win = nyx_create_standard_window(SYMBOL_DRIVE"  Create SD Partition emuMMC", _action_emummc_window_close);
+		win = nyx_create_standard_window(SYMBOL_DRIVE"  建立 SD 分割區型虛擬系統", _action_emummc_window_close);
 
 	//Disable buttons.
 	nyx_window_toggle_buttons(win, true);
@@ -201,8 +201,8 @@ static void _create_mbox_emummc_raw()
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char *mbox_btn_format[] = { "\222Continue", "\222Cancel", "" };
-	static char *mbox_btn_parts[] = { "\262Part 1", "\262Part 2", "\262Part 3", "\222Cancel", "" };
+	static const char *mbox_btn_format[] = { "\222繼續", "\222取消", "" };
+	static char *mbox_btn_parts[] = { "\262分割區 1", "\262分割區 2", "\262分割區 3", "\222取消", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 6);
@@ -253,18 +253,18 @@ static void _create_mbox_emummc_raw()
 	if (mbr_ctx.available)
 	{
 		s_printf(txt_buf,
-			"#C7EA46 Found applicable partition(s)!#\n"
-			"#FF8000 Choose a partition to continue:#\n\n");
+			"#C7EA46 找到可用的分割區！#\n"
+			"#FF8000 選擇要使用的分割區：#\n\n");
 	}
 	else
-		s_printf(txt_buf, "#FFDD00 Failed to find applicable partition!#\n\n");
+		s_printf(txt_buf, "#FFDD00 找不到可用的分割區！#\n\n");
 
 	s_printf(txt_buf + strlen(txt_buf),
-		"Partition table:\n"
-		"#C0C0C0 Part 0: Type: %02x, Start: %08x, Size: %08x#\n"
-		"#%s Part 1: Type: %02x, Start: %08x, Size: %08x#\n"
-		"#%s Part 2: Type: %02x, Start: %08x, Size: %08x#\n"
-		"#%s Part 3: Type: %02x, Start: %08x, Size: %08x#",
+		"分割表：\n"
+		"#C0C0C0 分割區 0：類型 %02x，起點 %08x，大小 %08x#\n"
+		"#%s 分割區 1：類型 %02x，起點 %08x，大小 %08x#\n"
+		"#%s 分割區 2：類型 %02x，起點 %08x，大小 %08x#\n"
+		"#%s 分割區 3：類型 %02x，起點 %08x，大小 %08x#",
 		mbr->partitions[0].type, mbr->partitions[0].start_sct, mbr->partitions[0].size_sct,
 		(mbr_ctx.available & BIT(0)) ? (mbr_ctx.resized_cnt[0] ? "FFDD00" : "C7EA46") : "C0C0C0",
 		 mbr->partitions[1].type, mbr->partitions[1].start_sct, mbr->partitions[1].size_sct,
@@ -274,11 +274,11 @@ static void _create_mbox_emummc_raw()
 		 mbr->partitions[3].type, mbr->partitions[3].start_sct, mbr->partitions[3].size_sct);
 
 	if (mbr_ctx.resized_cnt[0] || mbr_ctx.resized_cnt[1] || mbr_ctx.resized_cnt[2])
-		strcat(txt_buf, "\n\n#FFDD00 Note:# Yellow entries have USER partition resized.");
+		strcat(txt_buf, "\n\n#FFDD00 註：# 黃色項目的 USER 分割區已調整過大小。");
 
 	if (!mbr_ctx.available)
-		strcat(txt_buf, "\n#FF8000 Do you want to partition the SD card?#\n"
-						  "#FF8000 (You will be asked on how to proceed)#");
+		strcat(txt_buf, "\n#FF8000 要分割 SD 卡嗎？#\n"
+						  "#FF8000 （接下來會詢問進行方式）#");
 
 	lv_mbox_set_text(mbox, txt_buf);
 	free(txt_buf);
@@ -342,16 +342,16 @@ static lv_res_t _create_mbox_emummc_create(lv_obj_t *btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char * mbox_btn_map[] = { "\222SD File", "\222SD Partition", "\222Cancel", "" };
+	static const char * mbox_btn_map[] = { "\222SD 檔案", "\222SD 分割區", "\222取消", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 6);
 
 	lv_mbox_set_text(mbox,
-		"Welcome to #C7EA46 emuMMC# creation tool!\n\n"
-		"Please choose what type of emuMMC you want to create.\n"
-		"#FF8000 SD File# is saved as files in the FAT partition.\n"
-		"#FF8000 SD Partition# is saved as raw image in an available partition.");
+		"歡迎使用 #C7EA46 虛擬系統# 建立工具！\n\n"
+		"請選擇要建立的虛擬系統類型。\n"
+		"#FF8000 SD 檔案#：以檔案形式存在 FAT 分割區裡。\n"
+		"#FF8000 SD 分割區#：以原始映像存在獨立的分割區裡。");
 
 	lv_mbox_add_btns(mbox, mbox_btn_map, _create_emummc_action);
 
@@ -387,14 +387,14 @@ static void _create_emummc_migrated_mbox()
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char *mbox_btn_map[] = { "\251", "OK", "\251", "" };
+	static const char *mbox_btn_map[] = { "\251", "確定", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 4);
 
 	lv_mbox_set_text(mbox,
-		"#FF8000 emuMMC Configuration#\n\n"
-		"#96FF00 The emuMMC configuration#\n#96FF00 was saved to sd card!#");
+		"#FF8000 虛擬系統設定#\n\n"
+		"#96FF00 虛擬系統設定#\n#96FF00 已儲存到 SD 卡！#");
 
 	lv_mbox_add_btns(mbox, mbox_btn_map, _save_emummc_cfg_mig_mbox_action);
 
@@ -566,8 +566,8 @@ static lv_res_t _create_emummc_migrate_action(lv_obj_t * btns, const char * txt)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char *mbox_btn_map[] = { "\222Continue", "\222Cancel", "" };
-	static const char *mbox_btn_map1[] = { "\251", "OK", "\251", "" };
+	static const char *mbox_btn_map[] = { "\222繼續", "\222取消", "" };
+	static const char *mbox_btn_map1[] = { "\251", "確定", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 6);
@@ -578,24 +578,24 @@ static lv_res_t _create_emummc_migrate_action(lv_obj_t * btns, const char * txt)
 	{
 		if (!emummc_backup)
 			s_printf(txt_buf,
-				"#C7EA46 Found suitable eMMC backup!#\n\n"
-				"#FF8000 Do you want to migrate it?#\n");
+				"#C7EA46 找到可用的 eMMC 備份！#\n\n"
+				"#FF8000 要轉移它嗎？#\n");
 		else
 			s_printf(txt_buf,
-				"#C7EA46 Found suitable emuMMC backup!#\n\n"
-				"#FF8000 Do you want to migrate it?#\n");
+				"#C7EA46 找到可用的虛擬系統備份！#\n\n"
+				"#FF8000 要轉移它嗎？#\n");
 		lv_mbox_add_btns(mbox, mbox_btn_map, _create_emummc_mig1_action);
 	}
 	else if (emummc)
 	{
 		s_printf(txt_buf,
-			"#C7EA46 Found SD Partition based emuMMC!#\n\n"
-			"#FF8000 Do you want to repair the config and partition type for it?#\n");
+			"#C7EA46 找到 SD 分割區型虛擬系統！#\n\n"
+			"#FF8000 要修復它的設定和分割區類型嗎？#\n");
 		lv_mbox_add_btns(mbox, mbox_btn_map, _create_emummc_mig0_action);
 	}
 	else
 	{
-		s_printf(txt_buf, "No emuMMC found!\n");
+		s_printf(txt_buf, "找不到虛擬系統！\n");
 		lv_mbox_add_btns(mbox, mbox_btn_map1, nyx_mbox_action);
 	}
 
@@ -626,15 +626,15 @@ static lv_res_t _create_mbox_emummc_migrate(lv_obj_t *btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static char *mbox_btn_map[] = { "\262Backup", "\262Fix RAW", "\222Cancel", "" };
+	static char *mbox_btn_map[] = { "\262備份", "\262修復 RAW", "\222取消", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 6);
 
 	lv_mbox_set_text(mbox,
-		"Welcome to #C7EA46 emuMMC# migration tool!\n\n"
-		"Please choose what type of migration you want to do.\n"
-		"Anything that was not found will have the button disabled.");
+		"歡迎使用 #C7EA46 虛擬系統# 轉移工具！\n\n"
+		"請選擇轉移的方式。\n"
+		"沒有找到的項目，按鈕會無法點選。");
 
 	char *path_buf = (char *)malloc(0x512);
 	mbr_t *mbr = (mbr_t *)malloc(sizeof(mbr_t));
@@ -764,14 +764,14 @@ static void _create_emummc_saved_mbox()
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char *mbox_btn_map[] = { "\251", "OK", "\251", "" };
+	static const char *mbox_btn_map[] = { "\251", "確定", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 4);
 
 	lv_mbox_set_text(mbox,
-		"#FF8000 emuMMC Configuration#\n\n"
-		"#96FF00 The emuMMC configuration#\n#96FF00 was saved to sd card!#");
+		"#FF8000 虛擬系統設定#\n\n"
+		"#96FF00 虛擬系統設定#\n#96FF00 已儲存到 SD 卡！#");
 
 	lv_mbox_add_btns(mbox, mbox_btn_map, _save_emummc_cfg_mbox_action);
 
@@ -829,8 +829,8 @@ static lv_res_t _action_win_change_emummc_close(lv_obj_t *btn)
 
 static lv_res_t _create_change_emummc_window(lv_obj_t *btn_caller)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_SETTINGS"  Change emuMMC", _action_win_change_emummc_close);
-	lv_win_add_btn(win, NULL, SYMBOL_POWER"  Disable", _save_disable_emummc_cfg_action);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_SETTINGS"  切換虛擬系統", _action_win_change_emummc_close);
+	lv_win_add_btn(win, NULL, SYMBOL_POWER"  停用", _save_disable_emummc_cfg_action);
 
 	sd_mount();
 
@@ -936,7 +936,7 @@ out0:;
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt = lv_label_create(h1, NULL);
-	lv_label_set_static_text(label_txt, "SD Raw Partitions");
+	lv_label_set_static_text(label_txt, "SD 原始分割區");
 	lv_obj_set_style(label_txt, lv_theme_get_current()->label.prim);
 	lv_obj_align(label_txt, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, -(LV_DPI / 2));
 
@@ -993,7 +993,7 @@ out0:;
 		lv_label_set_recolor(lv_desc, true);
 		lv_obj_set_style(lv_desc, &hint_small_style);
 
-		s_printf(txt_buf, "Sector start: 0x%08X\nFolder: %s", emummc_img->part_sector[raw_btn_idx], &emummc_img->part_path[raw_btn_idx * 128]);
+		s_printf(txt_buf, "起始磁區：0x%08X\n資料夾：%s", emummc_img->part_sector[raw_btn_idx], &emummc_img->part_path[raw_btn_idx * 128]);
 		lv_label_set_text(lv_desc, txt_buf);
 		lv_obj_align(lv_desc, btn, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 5);
 	}
@@ -1012,7 +1012,7 @@ out0:;
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt3 = lv_label_create(h2, NULL);
-	lv_label_set_static_text(label_txt3, "SD File Based");
+	lv_label_set_static_text(label_txt3, "SD 檔案型");
 	lv_obj_set_style(label_txt3, lv_theme_get_current()->label.prim);
 	lv_obj_align(label_txt3, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, -LV_DPI / 7);
 
@@ -1050,7 +1050,7 @@ out1:
 
 lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_EDIT"  emuMMC Manage", NULL);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_EDIT"  虛擬系統管理", NULL);
 
 	// Set resources to be managed by other windows.
 	emummc_manage_window = win;
@@ -1081,7 +1081,7 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt = lv_label_create(h1, NULL);
-	lv_label_set_static_text(label_txt, "emuMMC Info & Selection");
+	lv_label_set_static_text(label_txt, "虛擬系統資訊與選擇");
 	lv_obj_set_style(label_txt, lv_theme_get_current()->label.prim);
 	lv_obj_align(label_txt, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 11);
 
@@ -1094,7 +1094,7 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	// Create emuMMC info labels.
 	lv_obj_t *label_btn = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_btn, true);
-	lv_label_set_static_text(label_btn, emu_info.enabled ? "#96FF00 "SYMBOL_OK"  Enabled!#" : "#FF8000 "SYMBOL_CLOSE"  Disabled!#");
+	lv_label_set_static_text(label_btn, emu_info.enabled ? "#96FF00 "SYMBOL_OK"  已啟用！#" : "#FF8000 "SYMBOL_CLOSE"  已停用！#");
 	lv_obj_align(label_btn, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 4);
 
 	lv_obj_t *label_txt2 = lv_label_create(h1, NULL);
@@ -1104,17 +1104,17 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	if (emu_info.enabled)
 	{
 		if (emu_info.sector)
-			s_printf(txt_buf, "#00DDFF Type:# SD Raw Partition\n#00DDFF Sector:# 0x%08X\n#00DDFF Nintendo folder:# %s\n",
+			s_printf(txt_buf, "#00DDFF 類型：# SD 原始分割區\n#00DDFF 磁區：# 0x%08X\n#00DDFF Nintendo 資料夾：# %s\n",
 				emu_info.sector, emu_info.nintendo_path ? emu_info.nintendo_path : "");
 		else
-			s_printf(txt_buf, "#00DDFF Type:# SD File\n#00DDFF Base folder:# %s\n#00DDFF Nintendo folder:# %s\n",
+			s_printf(txt_buf, "#00DDFF 類型：# SD 檔案\n#00DDFF 基礎資料夾：# %s\n#00DDFF Nintendo 資料夾：# %s\n",
 				emu_info.path ? emu_info.path : "", emu_info.nintendo_path ? emu_info.nintendo_path : "");
 
 		lv_label_set_text(label_txt2, txt_buf);
 	}
 	else
 	{
-		lv_label_set_static_text(label_txt2, "emuMMC is disabled and eMMC will be used for boot.\n\n\n");
+		lv_label_set_static_text(label_txt2, "虛擬系統已停用，開機時會使用 eMMC（真實系統）。\n\n\n");
 	}
 
 	if (emu_info.path)
@@ -1130,16 +1130,16 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	lv_obj_t *btn2 = lv_btn_create(h1, NULL);
 	lv_btn_set_fit(btn2, true, true);
 	label_btn = lv_label_create(btn2, NULL);
-	lv_label_set_static_text(label_btn, SYMBOL_SETTINGS"  Change emuMMC");
+	lv_label_set_static_text(label_btn, SYMBOL_SETTINGS"  切換虛擬系統");
 	lv_obj_align(btn2, label_txt2, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI * 6 / 10);
 	lv_btn_set_action(btn2, LV_BTN_ACTION_CLICK, _create_change_emummc_window);
 
 	label_txt2 = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_txt2, true);
 	lv_label_set_static_text(label_txt2,
-		"Choose between images created in the emuMMC folder\n"
-		"or in SD card partitions. You can have at most 3 partition\n"
-		"based and countless file based.");
+		"可選擇 emuMMC 資料夾裡的映像，\n"
+		"或 SD 卡分割區裡的映像。分割區型最多 3 個，\n"
+		"檔案型則沒有數量限制。");
 
 	lv_obj_set_style(label_txt2, &hint_small_style);
 	lv_obj_align(label_txt2, btn2, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
@@ -1157,7 +1157,7 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt3 = lv_label_create(h2, NULL);
-	lv_label_set_static_text(label_txt3, "emuMMC Tools");
+	lv_label_set_static_text(label_txt3, "虛擬系統工具");
 	lv_obj_set_style(label_txt3, lv_theme_get_current()->label.prim);
 	lv_obj_align(label_txt3, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 5);
 
@@ -1168,15 +1168,15 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	lv_obj_t *btn3 = lv_btn_create(h2, btn2);
 	label_btn = lv_label_create(btn3, NULL);
 	lv_btn_set_fit(btn3, true, true);
-	lv_label_set_static_text(label_btn, SYMBOL_DRIVE"  Create emuMMC");
+	lv_label_set_static_text(label_btn, SYMBOL_DRIVE"  建立虛擬系統");
 	lv_obj_align(btn3, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 4);
 	lv_btn_set_action(btn3, LV_BTN_ACTION_CLICK, _create_mbox_emummc_create);
 
 	lv_obj_t *label_txt4 = lv_label_create(h2, NULL);
 	lv_label_set_recolor(label_txt4, true);
 	lv_label_set_static_text(label_txt4,
-		"Allows you to create a new #C7EA46 SD File# or #C7EA46 SD Raw Partition#\n"
-		"emuMMC. You can create it from eMMC or a eMMC Backup.\n");
+		"建立新的 #C7EA46 SD 檔案型# 或 #C7EA46 SD 原始分割區型#\n"
+		"虛擬系統，可從 eMMC 或 eMMC 備份建立。\n");
 
 	lv_obj_set_style(label_txt4, &hint_small_style);
 	lv_obj_align(label_txt4, btn3, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
@@ -1184,7 +1184,7 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	// Create Migrate emuMMC button.
 	lv_obj_t *btn4 = lv_btn_create(h2, btn2);
 	label_btn = lv_label_create(btn4, NULL);
-	lv_label_set_static_text(label_btn, SYMBOL_SHUFFLE"  Migrate emuMMC");
+	lv_label_set_static_text(label_btn, SYMBOL_SHUFFLE"  轉移虛擬系統");
 	lv_obj_align(btn4, label_txt4, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 2);
 	lv_btn_set_action(btn4, LV_BTN_ACTION_CLICK, NULL);
 	lv_btn_set_action(btn4, LV_BTN_ACTION_CLICK, _create_mbox_emummc_migrate);
@@ -1192,7 +1192,7 @@ lv_res_t create_win_emummc_tools(lv_obj_t *btn)
 	label_txt4 = lv_label_create(h2, NULL);
 	lv_label_set_recolor(label_txt4, true);
 	lv_label_set_static_text(label_txt4,
-		"Migrate a backup to a #C7EA46 SD File emuMMC# or repair an existing\n#C7EA46 SD Raw Partition emuMMC#.\n");
+		"把備份轉成 #C7EA46 SD 檔案型虛擬系統#，或修復現有的\n#C7EA46 SD 原始分割區型虛擬系統#。\n");
 	lv_obj_set_style(label_txt4, &hint_small_style);
 	lv_obj_align(label_txt4, btn4, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
 

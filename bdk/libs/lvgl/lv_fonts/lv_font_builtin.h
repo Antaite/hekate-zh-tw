@@ -86,6 +86,10 @@ LV_FONT_DECLARE(ubuntu_mono);
 
 #if USE_HEKATE_SYMBOL_120
 LV_FONT_DECLARE(hekate_symbol_120);
+
+/* 繁體中文字型 */
+LV_FONT_DECLARE(cjk_tw_20);
+LV_FONT_DECLARE(cjk_tw_30);
 #endif
 
 #ifdef __cplusplus

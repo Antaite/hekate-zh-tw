@@ -49,11 +49,11 @@ static lv_res_t _create_window_dump_done(int error, char *dump_filenames)
 	char *txt_buf = (char *)malloc(SZ_4K);
 
 	if (error)
-		s_printf(txt_buf, "#FFDD00 Failed to dump to# %s#FFDD00 !#\nError: %d", dump_filenames, error);
+		s_printf(txt_buf, "#FFDD00 無法匯出# %s#FFDD00 ！#\n錯誤：%d", dump_filenames, error);
 	else
 	{
 		char *sn = emmcsn_path_impl(NULL, NULL, NULL, NULL);
-		s_printf(txt_buf, "Dumping to SD card finished!\nFiles: #C7EA46 backup/%s/dumps/#\n%s", sn, dump_filenames);
+		s_printf(txt_buf, "已匯出到 SD 卡！\n檔案位置：#C7EA46 backup/%s/dumps/#\n%s", sn, dump_filenames);
 	}
 	lv_mbox_set_text(mbox, txt_buf);
 	free(txt_buf);
@@ -252,12 +252,12 @@ static lv_res_t _create_mbox_cal0(lv_obj_t *btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char * mbox_btn_map[] = { "\251", "\222Dump", "\222Close", "\251", "" };
+	static const char * mbox_btn_map[] = { "\251", "\222匯出", "\222關閉", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 5);
 
-	lv_mbox_set_text(mbox, "#C7EA46 CAL0 Info#");
+	lv_mbox_set_text(mbox, "#C7EA46 CAL0 資訊#");
 
 	char *txt_buf = (char *)malloc(SZ_16K);
 	txt_buf[0] = 0;
@@ -276,13 +276,13 @@ static lv_res_t _create_mbox_cal0(lv_obj_t *btn)
 	// Check result. Don't error if hash doesn't match.
 	if (cal0_res == 1)
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 Failed to init eMMC!#");
+		lv_label_set_text(lb_desc, "#FFDD00 eMMC 初始化失敗！#");
 
 		goto out;
 	}
 	else if (cal0_res == 2)
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 CAL0 is corrupt or wrong keys!#\n");
+		lv_label_set_text(lb_desc, "#FFDD00 CAL0 已損毀或金鑰錯誤！#\n");
 		goto out;
 	}
 
@@ -548,9 +548,9 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 {
 	u32 uptime_s = get_tmr_s();
 
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" HW & Fuses Info", _action_win_hw_info_status_close);
-	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" Dump fuses", _fuse_dump_window_action);
-	lv_win_add_btn(win, NULL, SYMBOL_INFO" CAL0 Info", _create_mbox_cal0);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" 硬體與熔絲資訊", _action_win_hw_info_status_close);
+	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" 匯出熔絲", _fuse_dump_window_action);
+	lv_win_add_btn(win, NULL, SYMBOL_INFO" CAL0 資訊", _create_mbox_cal0);
 
 	lv_obj_t *desc = lv_cont_create(win, NULL);
 	lv_obj_set_size(desc, LV_HOR_RES / 2 / 5 * 2, LV_VER_RES - (LV_DPI * 11 / 7) - 5);
@@ -574,27 +574,27 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 		"#FF8000 SoC:#\n"
 		"#FF8000 SKU:#\n"
 		"#FF8000 DRAM ID:#\n"
-		"#FF8000 Burnt Fuses (ODM 7/6):#\n"
+		"#FF8000 已燒熔絲 (ODM 7/6)：#\n"
 		"ODM Fields (4/6/7):\n"
-		"Secure Boot Key (SBK):\n"
-		"Device Key (DK):\n"
-		"Public Key (PK SHA256):\n\n"
-		"HOS Keygen Revision:\n"
-		"USB Controller (BROM):\n"
-		"Final Test Revision:\n"
-		"Chip Probing Revision:\n"
-		"BootROM Revision:\n\n"
+		"安全開機金鑰 (SBK)：\n"
+		"裝置金鑰 (DK)：\n"
+		"公鑰 (PK SHA256)：\n\n"
+		"主機系統金鑰版本：\n"
+		"USB 控制器 (BROM)：\n"
+		"最終測試版本：\n"
+		"晶片探測版本：\n"
+		"BootROM 版本：\n\n"
 		"#FF8000 CPU/GPU/SoC Speedo:#\n"
 		"CPU/GPU/SoC IDDQ:\n"
 		"CPU Speedo 1:\n"
 		"SoC Speedo 2:\n\n"
-		"Product Code:\n"
-		"Vendor Code:\n"
-		"FAB/LOT Code:\n"
-		"Wafer ID:\n"
-		"X Coordinate:\n"
-		"Y Coordinate:\n\n"
-		"Uptime:"
+		"產品代碼：\n"
+		"廠商代碼：\n"
+		"FAB/LOT 代碼：\n"
+		"晶圓 ID：\n"
+		"X 座標：\n"
+		"Y 座標：\n\n"
+		"開機時間："
 	);
 
 	lv_obj_set_width(lb_desc, lv_obj_get_width(desc));
@@ -628,7 +628,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 		sku = "Aula - Fric";
 		break;
 	default:
-		sku = "#FF8000 Unknown#";
+		sku = "#FF8000 未知#";
 		break;
 	}
 
@@ -654,7 +654,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			strcpy(dram_model, "Samsung K4FBE3D4HM-MGXX 8GB");
 			break;
 		default:
-			strcpy(dram_model, "#FF8000 Unknown#");
+			strcpy(dram_model, "#FF8000 未知#");
 			break;
 		}
 	}
@@ -767,7 +767,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 	case 24: strcpy(fuses_hos_version, "23.0.0 - 23.0.1");    break;
 	case 25: strcpy(fuses_hos_version, "23.5.0+");            break;
 	case 64: strcpy(fuses_hos_version, "#FFD000 Overburnt#"); break;
-	default: strcpy(fuses_hos_version, "#FF8000 Unknown#");   break;
+	default: strcpy(fuses_hos_version, "#FF8000 未知#");   break;
 	}
 
 	u32 fab = FUSE(FUSE_OPT_FAB_CODE);
@@ -794,8 +794,8 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 		FUSE(FUSE_PRIVATE_KEY3) == 0xFFFFFFFF &&
 		FUSE(FUSE_PRIVATE_KEY4) == 0xFFFFFFFF)
 	{
-		strcpy(sbk_key, "Can't be read (locked out)");
-		strcpy(dev_key, "Can't be read (locked out)");
+		strcpy(sbk_key, "無法讀取（已鎖定）");
+		strcpy(dev_key, "無法讀取（已鎖定）");
 	}
 	else
 	{
@@ -1048,7 +1048,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 	if (touch_clone_oled)
 		display_id = 0x10000;
 
-	strcat(txt_buf, "#00DDFF Display Panel:#\n#FF8000 Model:# ");
+	strcat(txt_buf, "#00DDFF 螢幕面板：#\n#FF8000 型號：# ");
 
 	switch (display_id)
 	{
@@ -1146,7 +1146,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 		break;
 
 	case 0xCCCC:
-		strcat(txt_buf, "#FFDD00 Failed to get info!#");
+		strcat(txt_buf, "#FFDD00 無法取得資訊！#");
 		break;
 
 	case 0x10000: // Custom ID for LCD OEM Clone for Switch OLED.
@@ -1180,7 +1180,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 	touch_fw_info_t touch_fw;
 	if (!touch_get_fw_info(&touch_fw))
 	{
-		strcat(txt_buf, "\n\n#00DDFF Touch Panel:#\n#FF8000 Model:# ");
+		strcat(txt_buf, "\n\n#00DDFF 觸控面板：#\n#FF8000 型號：# ");
 
 		touch_panel_info_t *touch_panel = touch_get_panel_vendor();
 		if (touch_clone_oled)
@@ -1277,13 +1277,13 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			byte_swap_16(touch_fw.fw_rev)); // Byte swapping makes more sense here.
 	}
 	else
-		strcat(txt_buf, "\n\n#FFDD00 Failed to get touch info!#");
+		strcat(txt_buf, "\n\n#FFDD00 無法取得觸控資訊！#");
 
 	// Check if patched unit.
 	if (!fuse_check_patched_rcm())
-		strcat(txt_buf, "\n\n#96FF00 This unit is exploitable#\n#96FF00 to the RCM bug!#");
+		strcat(txt_buf, "\n\n#96FF00 這台主機#\n#96FF00 可利用 RCM 漏洞！#");
 	else
-		strcat(txt_buf, "\n\n#FF8000 This unit is patched#\n#FF8000 to the RCM bug!#");
+		strcat(txt_buf, "\n\n#FF8000 這台主機#\n#FF8000 已修補 RCM 漏洞！#");
 
 	lv_label_set_text(lb_desc2, txt_buf);
 
@@ -1317,8 +1317,8 @@ static void _ipatch_process(u32 offset, u32 value)
 
 static lv_res_t _create_window_bootrom_info_status(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" Bootrom Info", NULL);
-	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" Dump Bootrom", _bootrom_dump_window_action);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" Bootrom 資訊", NULL);
+	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" 匯出 Bootrom", _bootrom_dump_window_action);
 
 	lv_obj_t *desc = lv_cont_create(win, NULL);
 	lv_obj_set_size(desc, LV_HOR_RES / 2 / 3 * 2, LV_VER_RES - (LV_DPI * 11 / 7) - 5);
@@ -1334,7 +1334,7 @@ static lv_res_t _create_window_bootrom_info_status(lv_obj_t *btn)
 
 	u32 res = fuse_read_ipatch(_ipatch_process);
 	if (res != 0)
-		s_printf(txt_buf + strlen(txt_buf), "#FFDD00 Failed to read ipatches. Error: %d#", res);
+		s_printf(txt_buf + strlen(txt_buf), "#FFDD00 無法讀取 ipatches，錯誤：%d#", res);
 
 	lv_label_set_text(lb_desc, txt_buf);
 
@@ -1372,12 +1372,12 @@ static lv_res_t _create_mbox_lockpick(lv_obj_t *btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char * mbox_btn_map[] = { "\251", "\222Continue", "\222Close", "\251", "" };
+	static const char * mbox_btn_map[] = { "\251", "\222繼續", "\222關閉", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 
-	lv_mbox_set_text(mbox, "#FF8000 Lockpick RCM#\n\nThis will launch Lockpick RCM.\nDo you want to continue?\n\n"
-		"To return back from lockpick use\n#96FF00 Reboot to hekate#.");
+	lv_mbox_set_text(mbox, "#FF8000 Lockpick RCM#\n\n即將啟動 Lockpick RCM。\n要繼續嗎？\n\n"
+		"要從 Lockpick 返回，請選\n#96FF00 Reboot to hekate#。");
 
 	lv_mbox_add_btns(mbox, mbox_btn_map, _launch_lockpick_action);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 5);
@@ -1399,12 +1399,12 @@ static lv_res_t _create_mbox_emmc_sandisk_report(lv_obj_t * btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char * mbox_btn_map[] = { "\251", "\222Close", "\251", "" };
+	static const char * mbox_btn_map[] = { "\251", "\222關閉", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 8);
 
-	lv_mbox_set_text(mbox, "#C7EA46 Sandisk Device Report#");
+	lv_mbox_set_text(mbox, "#C7EA46 Sandisk 裝置報告#");
 
 	u8 *buf = zalloc(EMMC_BLOCKSIZE);
 	char *txt_buf = (char *)malloc(SZ_32K);
@@ -1436,7 +1436,7 @@ static lv_res_t _create_mbox_emmc_sandisk_report(lv_obj_t * btn)
 
 	if (emmc_initialize(false))
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 Failed to init eMMC!#");
+		lv_label_set_text(lb_desc, "#FFDD00 eMMC 初始化失敗！#");
 
 		goto out;
 	}
@@ -1584,12 +1584,12 @@ static lv_res_t _create_mbox_sd_vendor_info(lv_obj_t * btn)
 	lv_obj_set_style(dark_bg, &mbox_darken);
 	lv_obj_set_size(dark_bg, LV_HOR_RES, LV_VER_RES);
 
-	static const char * mbox_btn_map[] = { "\251", "\222Close", "\251", "" };
+	static const char * mbox_btn_map[] = { "\251", "\222關閉", "\251", "" };
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 5);
 
-	lv_mbox_set_text(mbox, "#C7EA46 SD Vendor/Reserved Data#\nPlease wait..");
+	lv_mbox_set_text(mbox, "#C7EA46 SD 卡廠商／保留資料#\n請稍候…");
 	manual_system_maintenance(true);
 
 	u8 *buf = zalloc(EMMC_BLOCKSIZE);
@@ -1621,7 +1621,7 @@ static lv_res_t _create_mbox_sd_vendor_info(lv_obj_t * btn)
 
 	if (sd_mount())
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 Failed to init SD!#");
+		lv_label_set_text(lb_desc, "#FFDD00 SD 卡初始化失敗！#");
 		goto out;
 	}
 
@@ -1722,7 +1722,7 @@ static lv_res_t _create_mbox_sd_vendor_info(lv_obj_t * btn)
 	else
 		strcpy(txt_buf2 + strlen(txt_buf2), "#00DDFF Health Report Data#\n#FFDD00 Not supported!#");
 
-	lv_mbox_set_text(mbox, "#C7EA46 SD Vendor/Reserved Data#");
+	lv_mbox_set_text(mbox, "#C7EA46 SD 卡廠商／保留資料#");
 
 	lv_label_set_text(lb_desc, txt_buf);
 	lv_label_set_text(lb_desc2, txt_buf2);
@@ -1758,7 +1758,7 @@ static lv_res_t _create_mbox_benchmark(bool sd_bench)
 
 	char *txt_buf = (char *)malloc(SZ_16K);
 
-	s_printf(txt_buf, "#FF8000 %s Benchmark#\n[Raw Reads] Abort: VOL- & VOL+", sd_bench ? "SD Card" : "eMMC");
+	s_printf(txt_buf, "#FF8000 %s 效能測試#\n［原始讀取］取消：音量- 加 音量+", sd_bench ? "SD Card" : "eMMC");
 
 	lv_mbox_set_text(mbox, txt_buf);
 	txt_buf[0] = 0;
@@ -1803,7 +1803,7 @@ static lv_res_t _create_mbox_benchmark(bool sd_bench)
 
 	if (res)
 	{
-		lv_mbox_set_text(mbox, "#FFDD00 Failed to init Storage!#");
+		lv_mbox_set_text(mbox, "#FFDD00 儲存裝置初始化失敗！#");
 		goto out;
 	}
 
@@ -2042,9 +2042,9 @@ error:
 	if (error)
 	{
 		if (error == -1)
-			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                      Aborted!                     #");
+			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                      已取消！                     #");
 		else
-			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                 IO Error occurred!                #");
+			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                 發生讀寫錯誤！                #");
 
 		lv_label_set_text(lbl_status, txt_buf);
 		lv_obj_align(lbl_status, NULL, LV_ALIGN_CENTER, 0, 0);
@@ -2065,7 +2065,7 @@ error:
 		emmc_end();
 
 out:
-	s_printf(txt_buf, "#FF8000 %s Benchmark#\n[Raw Reads]", sd_bench ? "SD Card" : "eMMC");
+	s_printf(txt_buf, "#FF8000 %s 效能測試#\n［原始讀取］", sd_bench ? "SD Card" : "eMMC");
 	lv_mbox_set_text(mbox, txt_buf);
 
 	// Update SDMMC error info in case it changed.
@@ -2103,8 +2103,8 @@ static lv_res_t _create_mbox_sd_bench(lv_obj_t * btn)
 
 static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" Internal eMMC Info", NULL);
-	lv_win_add_btn(win, NULL, SYMBOL_CHIP" Benchmark", _create_mbox_emmc_bench);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_CHIP" 內建 eMMC 資訊", NULL);
+	lv_win_add_btn(win, NULL, SYMBOL_CHIP" 效能測試", _create_mbox_emmc_bench);
 
 	lv_obj_t *desc = lv_cont_create(win, NULL);
 	lv_obj_set_size(desc, LV_HOR_RES / 2 / 6 * 2, LV_VER_RES - (LV_DPI * 11 / 7) - 5);
@@ -2120,7 +2120,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 
 	if (emmc_initialize(false))
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 Failed to init eMMC!#");
+		lv_label_set_text(lb_desc, "#FFDD00 eMMC 初始化失敗！#");
 		lv_obj_set_width(lb_desc, lv_obj_get_width(desc));
 		emmc_errors = emmc_get_error_count();
 
@@ -2149,7 +2149,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		break;
 	case 0x45: // Unofficial.
 		strcat(txt_buf, "SanDisk ");
-		lv_win_add_btn(win, NULL, SYMBOL_FILE_ALT" Device Report", _create_mbox_emmc_sandisk_report);
+		lv_win_add_btn(win, NULL, SYMBOL_FILE_ALT" 裝置報告", _create_mbox_emmc_sandisk_report);
 		break;
 	case 0x89: // Unofficial.
 		strcat(txt_buf, "Silicon Motion ");
@@ -2236,16 +2236,16 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 	switch (emmc_storage.ext_csd.pre_eol_info)
 	{
 	case 1:
-		rsvd_blocks = "Normal (< 80%)";
+		rsvd_blocks = "正常（< 80%）";
 		break;
 	case 2:
-		rsvd_blocks = "Warning (> 80%)";
+		rsvd_blocks = "警告（> 80%）";
 		break;
 	case 3:
-		rsvd_blocks = "Critical (> 90%)";
+		rsvd_blocks = "嚴重（> 90%）";
 		break;
 	default:
-		rsvd_blocks = "#FF8000 Unknown#";
+		rsvd_blocks = "#FF8000 未知#";
 		break;
 	}
 
@@ -2261,20 +2261,20 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 
 	lv_label_set_static_text(lb_desc,
 		"#00DDFF CID:#\n"
-		"Vendor ID:\n"
-		"Model:\n"
-		"Prod Rev:\n"
+		"廠商 ID：\n"
+		"型號：\n"
+		"產品版本：\n"
 		"S/N:\n"
-		"Month/Year:\n\n"
+		"製造年月：\n\n"
 		"#00DDFF Ext CSD:#\n"
-		"Cmd Classes:\n"
-		"Max Bus Rate:\n"
-		"Current Rate:\n"
-		"Enhanced Area:\n"
-		"Write Cache:\n\n"
-		"Maintenance:\n"
-		"Estimated Life:\n"
-		"Reserved Used:"
+		"指令類別：\n"
+		"最大匯流排速率：\n"
+		"目前速率：\n"
+		"強化區域：\n"
+		"寫入快取：\n\n"
+		"背景維護：\n"
+		"預估壽命：\n"
+		"保留區使用量："
 	);
 	lv_obj_set_width(lb_desc, lv_obj_get_width(desc));
 
@@ -2296,12 +2296,12 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 
 	u32 boot_size = emmc_storage.ext_csd.boot_mult << 17;
 	u32 rpmb_size = emmc_storage.ext_csd.rpmb_mult << 17;
-	strcpy(txt_buf, "#00DDFF eMMC Physical Partitions:#\n");
+	strcpy(txt_buf, "#00DDFF eMMC 實體分割區：#\n");
 	s_printf(txt_buf + strlen(txt_buf), "1: #96FF00 BOOT0#  Size: %6d KiB  Sectors: 0x%08X\n", boot_size / 1024, boot_size / EMMC_BLOCKSIZE);
 	s_printf(txt_buf + strlen(txt_buf), "2: #96FF00 BOOT1#  Size: %6d KiB  Sectors: 0x%08X\n", boot_size / 1024, boot_size / EMMC_BLOCKSIZE);
 	s_printf(txt_buf + strlen(txt_buf), "3: #96FF00 RPMB#   Size: %6d KiB  Sectors: 0x%08X\n", rpmb_size / 1024, rpmb_size / EMMC_BLOCKSIZE);
 	s_printf(txt_buf + strlen(txt_buf), "0: #96FF00 GPP#    Size: %6d MiB  Sectors: 0x%08X\n", emmc_storage.sec_cnt >> SECTORS_TO_MIB_COEFF, emmc_storage.sec_cnt);
-	strcat(txt_buf, "\n#00DDFF GPP (eMMC USER) Partition Table:#\n");
+	strcat(txt_buf, "\n#00DDFF GPP（eMMC USER）分割表：#\n");
 
 	emmc_set_partition(EMMC_GPP);
 	LIST_INIT(gpt);
@@ -2315,7 +2315,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		int lines = strlen(part->name) > 25 ? 2 : 1;
 		if ((lines_left - lines) <= 0)
 		{
-			strcat(txt_buf, "#FFDD00 Table does not fit on screen...#");
+			strcat(txt_buf, "#FFDD00 分割表太長，畫面放不下…#");
 			break;
 		}
 
@@ -2336,7 +2336,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		idx++;
 	}
 	if (!idx)
-		strcat(txt_buf, "#FFDD00 Partition table is empty!#");
+		strcat(txt_buf, "#FFDD00 分割表是空的！#");
 
 	emmc_gpt_free(&gpt);
 
@@ -2360,15 +2360,15 @@ out_error:
 		lv_mbox_set_recolor_text(mbox, true);
 
 		s_printf(txt_buf,
-			"#FF8000 eMMC Issues Warning#\n\n"
-			"#FFDD00 Your eMMC is initialized in a slower mode,#\n"
-			"#FFDD00 or init/read/write errors occurred!#\n"
-			"#FFDD00 This might mean hardware issues!#\n\n"
-			"#00DDFF Bus Speed:# %d MB/s\n\n"
-			"#00DDFF SDMMC4 Errors:#\n"
-			"Init fails: %d\n"
-			"Read/Write fails: %d\n"
-			"Read/Write errors: %d",
+			"#FF8000 eMMC 異常警告#\n\n"
+			"#FFDD00 eMMC 以較慢的模式初始化，#\n"
+			"#FFDD00 或發生初始化／讀寫錯誤！#\n"
+			"#FFDD00 可能是硬體有問題！#\n\n"
+			"#00DDFF 匯流排速度：# %d MB/s\n\n"
+			"#00DDFF SDMMC4 錯誤：#\n"
+			"初始化失敗：%d\n"
+			"讀寫失敗：%d\n"
+			"讀寫錯誤：%d",
 			emmc_storage.csd.busspeed,
 			emmc_errors[EMMC_ERROR_INIT_FAIL],
 			emmc_errors[EMMC_ERROR_RW_FAIL],
@@ -2389,9 +2389,9 @@ out_error:
 
 static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_SD" microSD Card Info", NULL);
-	lv_win_add_btn(win, NULL, SYMBOL_SD" Benchmark", _create_mbox_sd_bench);
-	lv_win_add_btn(win, NULL, SYMBOL_FILE_ALT" Vendor Registers", _create_mbox_sd_vendor_info);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_SD" microSD 卡資訊", NULL);
+	lv_win_add_btn(win, NULL, SYMBOL_SD" 效能測試", _create_mbox_sd_bench);
+	lv_win_add_btn(win, NULL, SYMBOL_FILE_ALT" 廠商暫存器", _create_mbox_sd_vendor_info);
 
 	lv_obj_t *desc = lv_cont_create(win, NULL);
 	lv_obj_set_size(desc, LV_HOR_RES / 2 / 6 * 2, LV_VER_RES - (LV_DPI * 11 / 8) * 5 / 2);
@@ -2400,7 +2400,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	lv_label_set_long_mode(lb_desc, LV_LABEL_LONG_BREAK);
 	lv_label_set_recolor(lb_desc, true);
 
-	lv_label_set_text(lb_desc, "#D4FF00 Please wait...#");
+	lv_label_set_text(lb_desc, "#D4FF00 請稍候…#");
 	lv_obj_set_width(lb_desc, lv_obj_get_width(desc));
 
 	// Disable buttons.
@@ -2410,21 +2410,21 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 
 	if (sd_mount())
 	{
-		lv_label_set_text(lb_desc, "#FFDD00 Failed to init SD!#");
+		lv_label_set_text(lb_desc, "#FFDD00 SD 卡初始化失敗！#");
 		goto failed;
 	}
 
 	lv_label_set_text(lb_desc,
-		"#00DDFF Card ID#\n"
-		"Vendor ID:\n"
-		"Model:\n"
-		"OEM ID:\n"
-		"HW rev:\n"
-		"FW rev:\n"
+		"#00DDFF 卡片 ID#\n"
+		"廠商 ID：\n"
+		"型號：\n"
+		"OEM ID：\n"
+		"硬體版本：\n"
+		"韌體版本：\n"
 		"S/N:\n"
-		"Month/Year:\n\n"
-		"Max Power:\n"
-		"Initial bus:"
+		"製造年月：\n\n"
+		"最大功率：\n"
+		"初始匯流排："
 	);
 
 	lv_obj_t *val = lv_cont_create(win, NULL);
@@ -2439,7 +2439,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	switch (sd_storage.cid.manfid)
 	{
 	case 0x00:
-		strcat(txt_buf, "#FFDD00 Fake# ");
+		strcat(txt_buf, "#FFDD00 假卡# ");
 		break;
 	case 0x01:
 		strcat(txt_buf, "Panasonic ");
@@ -2602,17 +2602,17 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	lv_obj_t * lb_desc2 = lv_label_create(desc2, lb_desc);
 
 	lv_label_set_static_text(lb_desc2,
-		"#00DDFF Card-Specific Data#\n"
-		"Cmd Classes:\n"
-		"Capacity:\n"
-		"Capacity (LBA):\n"
-		"Bus Width:\n"
-		"Current Rate:\n"
-		"Max Bus Speed:\n"
-		"Speed Class:\n"
-		"UHS Classes:\n"
-		"Write Protect:\n"
-		"Vendor Info:"
+		"#00DDFF 卡片規格資料#\n"
+		"指令類別：\n"
+		"容量：\n"
+		"容量 (LBA)：\n"
+		"匯流排寬度：\n"
+		"目前速率：\n"
+		"最大匯流排速度：\n"
+		"速度等級：\n"
+		"UHS 等級：\n"
+		"寫入保護：\n"
+		"廠商資訊："
 	);
 	lv_obj_set_width(lb_desc2, lv_obj_get_width(desc2));
 	lv_obj_align(desc2, val, LV_ALIGN_OUT_RIGHT_MID, LV_DPI / 5 * 3, 0);
@@ -2626,14 +2626,14 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	switch (sd_storage.csd.write_protect)
 	{
 	case 0:
-		wp_info = "Inactive";
+		wp_info = "未啟用";
 		break;
 	case 1:
-		wp_info = "Temporary";
+		wp_info = "暫時";
 		break;
 	case 2 ... 3:
 	default:
-		wp_info = "Permanent";
+		wp_info = "永久";
 		break;
 	}
 
@@ -2738,7 +2738,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	lv_obj_set_size(desc3, LV_HOR_RES / 2 / 2 * 2, LV_VER_RES - (LV_DPI * 11 / 8) * 4);
 
 	lv_obj_t * lb_desc3 = lv_label_create(desc3, lb_desc);
-	lv_label_set_text(lb_desc3, "#D4FF00 Acquiring info...#");
+	lv_label_set_text(lb_desc3, "#D4FF00 正在取得資訊…#");
 	lv_obj_set_width(lb_desc3, lv_obj_get_width(desc3));
 
 	lv_obj_align(desc3, desc, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 2);
@@ -2764,10 +2764,10 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	lv_obj_set_width(lb_desc4, lv_obj_get_width(desc4));
 
 	lv_label_set_text(lb_desc4,
-		"#00DDFF SDMMC1 Errors:#\n"
-		"Init fails:\n"
-		"Read/Write fails:\n"
-		"Read/Write errors:"
+		"#00DDFF SDMMC1 錯誤：#\n"
+		"初始化失敗：\n"
+		"讀寫失敗：\n"
+		"讀寫錯誤："
 	);
 	lv_obj_set_size(desc4, LV_HOR_RES / 2 / 11 * 5, LV_VER_RES - (LV_DPI * 11 / 8) * 4);
 	lv_obj_set_width(lb_desc4, lv_obj_get_width(desc4));
@@ -2795,10 +2795,10 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	f_getfree("", &sd_fs.free_clst, NULL);
 
 	lv_label_set_text(lb_desc3,
-		"#00DDFF Found FAT FS:#\n"
-		"Filesystem:\n"
-		"Cluster:\n"
-		"Size free/total:"
+		"#00DDFF 檔案系統：#\n"
+		"格式：\n"
+		"叢集大小：\n"
+		"可用／總容量："
 	);
 
 	lv_obj_set_width(lb_desc3, lv_obj_get_width(desc3));
@@ -2825,8 +2825,8 @@ failed:
 
 static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 {
-	lv_obj_t *win = nyx_create_standard_window(SYMBOL_BATTERY_FULL" Battery Info", NULL);
-	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" Dump Fuel Regs", _battery_dump_window_action);
+	lv_obj_t *win = nyx_create_standard_window(SYMBOL_BATTERY_FULL" 電池資訊", NULL);
+	lv_win_add_btn(win, NULL, SYMBOL_DOWNLOAD" 匯出電量計暫存器", _battery_dump_window_action);
 
 	lv_obj_t *desc = lv_cont_create(win, NULL);
 	lv_obj_set_size(desc, LV_HOR_RES / 2 / 4 * 2, LV_VER_RES - (LV_DPI * 11 / 7) - 5);
@@ -2836,21 +2836,21 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 	lv_label_set_recolor(lb_desc, true);
 
 	lv_label_set_static_text(lb_desc,
-		"#00DDFF Fuel Gauge IC Info:#\n"
-		"Capacity now:\n"
-		"Capacity full:\n"
-		"Capacity (design):\n"
-		"Current now:\n"
-		"Current average:\n"
-		"Voltage now:\n"
-		"Voltage open-circuit:\n"
-		"Min voltage reached:\n"
-		"Max voltage reached:\n"
-		"Empty voltage:\n"
-		"Battery temp:\n\n"
-		"#00DDFF PMIC IC Info:#\n"
-		"Main PMIC:\n\n"
-		"CPU/GPU PMIC:\n"
+		"#00DDFF 電量計晶片資訊：#\n"
+		"目前容量：\n"
+		"充滿容量：\n"
+		"設計容量：\n"
+		"目前電流：\n"
+		"平均電流：\n"
+		"目前電壓：\n"
+		"開路電壓：\n"
+		"最低電壓紀錄：\n"
+		"最高電壓紀錄：\n"
+		"沒電電壓：\n"
+		"電池溫度：\n\n"
+		"#00DDFF 電源管理晶片資訊：#\n"
+		"主要 PMIC：\n\n"
+		"CPU/GPU PMIC：\n"
 	);
 	lv_obj_set_width(lb_desc, lv_obj_get_width(desc));
 
@@ -2876,7 +2876,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		max17050_get_property(MAX17050_DesignCap, &value);
 		bool design_cap_init = value == 1000;
 		s_printf(txt_buf + strlen(txt_buf), "%s%d mAh%s\n",
-			design_cap_init ? "#FF8000 " : "", value,  design_cap_init ? " - Init "SYMBOL_WARNING"#" : "");
+			design_cap_init ? "#FF8000 " : "", value,  design_cap_init ? " - 初始值 "SYMBOL_WARNING"#" : "");
 
 		max17050_get_property(MAX17050_Current, &value);
 		s_printf(txt_buf + strlen(txt_buf), "%d mA\n", value / 1000);
@@ -2887,7 +2887,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		max17050_get_property(MAX17050_VCELL, &value);
 		bool voltage_empty = value < 3200;
 		s_printf(txt_buf + strlen(txt_buf), "%s%d mV%s\n",
-			voltage_empty ? "#FF8000 " : "", value,  voltage_empty ? " - Low "SYMBOL_WARNING"#" : "");
+			voltage_empty ? "#FF8000 " : "", value,  voltage_empty ? " - 過低 "SYMBOL_WARNING"#" : "");
 
 		max17050_get_property(MAX17050_OCVInternal, &value);
 		s_printf(txt_buf + strlen(txt_buf), "%d mV\n", value);
@@ -2905,7 +2905,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		s_printf(txt_buf + strlen(txt_buf), "%d.%d oC\n\n\n", value / 10, (value >= 0 ? value : (~value + 1)) % 10);
 	}
 	else
-		strcpy(txt_buf, "\n#FF8000 "SYMBOL_WARNING" Error!#\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		strcpy(txt_buf, "\n#FF8000 "SYMBOL_WARNING" 錯誤！#\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 	// Main Pmic IC info.
 	value = i2c_recv_byte(I2C_5, MAX77620_I2C_ADDR, MAX77620_REG_CID4);
@@ -2952,17 +2952,17 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 	lv_obj_t * lb_desc2 = lv_label_create(desc2, lb_desc);
 
 	lv_label_set_static_text(lb_desc2,
-		"#00DDFF Battery Charger IC Info:#\n"
-		"Input current limit:\n"
-		"System voltage limit:\n"
-		"Charge current limit:\n"
-		"Charge voltage limit:\n"
-		"Charge status:\n"
-		"Temperature status:\n\n"
-		"#00DDFF USB-PD IC Info:#\n"
-		"Connection status:\n"
-		"Input Wattage Limit:\n"
-		"USB-PD Profiles:"
+		"#00DDFF 充電晶片資訊：#\n"
+		"輸入電流上限：\n"
+		"系統電壓上限：\n"
+		"充電電流上限：\n"
+		"充電電壓上限：\n"
+		"充電狀態：\n"
+		"溫度狀態：\n\n"
+		"#00DDFF USB-PD 晶片資訊：#\n"
+		"連接狀態：\n"
+		"輸入功率上限：\n"
+		"USB-PD 規格："
 	);
 	lv_obj_set_width(lb_desc2, lv_obj_get_width(desc2));
 	lv_obj_align(desc2, val, LV_ALIGN_OUT_RIGHT_MID, LV_DPI / 2, 0);
@@ -2992,19 +2992,19 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		switch (value)
 		{
 		case 0:
-			strcat(txt_buf, "Not charging\n");
+			strcat(txt_buf, "未充電\n");
 			break;
 		case 1:
-			strcat(txt_buf, "Pre-charging\n");
+			strcat(txt_buf, "預充電\n");
 			break;
 		case 2:
-			strcat(txt_buf, "Fast charging\n");
+			strcat(txt_buf, "快速充電\n");
 			break;
 		case 3:
-			strcat(txt_buf, "Charge terminated\n");
+			strcat(txt_buf, "充電完成\n");
 			break;
 		default:
-			s_printf(txt_buf + strlen(txt_buf), "Unknown (%d)\n", value);
+			s_printf(txt_buf + strlen(txt_buf), "未知 (%d)\n", value);
 			break;
 		}
 
@@ -3021,18 +3021,18 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 			strcat(txt_buf, "Cool");
 			break;
 		case 5:
-			strcat(txt_buf, "#FF8000 Cold#");
+			strcat(txt_buf, "#FF8000 過冷#");
 			break;
 		case 6:
-			strcat(txt_buf, "#FF8000 Hot#");
+			strcat(txt_buf, "#FF8000 過熱#");
 			break;
 		default:
-			s_printf(txt_buf + strlen(txt_buf), "Unknown (%d)", value);
+			s_printf(txt_buf + strlen(txt_buf), "未知 (%d)", value);
 			break;
 		}
 	}
 	else
-		strcpy(txt_buf, "\n#FF8000 "SYMBOL_WARNING" Error!#\n\n\n\n\n");
+		strcpy(txt_buf, "\n#FF8000 "SYMBOL_WARNING" 錯誤！#\n\n\n\n\n");
 
 	strcat(txt_buf, "\n\n\n");
 
@@ -3043,7 +3043,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		u32 wattage = 0;
 		usb_pd_objects_t usb_pd;
 		bm92t36_get_source_info(&inserted, &usb_pd);
-		strcat(txt_buf, inserted ? "Connected" : "Disconnected");
+		strcat(txt_buf, inserted ? "已連接" : "未連接");
 
 		// Select 5V is no PD contract.
 		wattage = iinlim * (usb_pd.pdo_no ? usb_pd.selected_pdo.voltage : 5);
@@ -3051,7 +3051,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		s_printf(txt_buf + strlen(txt_buf), "\n%d.%d W", wattage / 1000, (wattage % 1000) / 100);
 
 		if (!usb_pd.pdo_no)
-			strcat(txt_buf, "\nNon PD");
+			strcat(txt_buf, "\n非 PD");
 
 		// Show 6 profiles max so they can fit.
 		usb_pd.pdo_no = MIN(usb_pd.pdo_no, 6);
@@ -3067,7 +3067,7 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 		}
 	}
 	else
-		strcat(txt_buf, "#FF8000 "SYMBOL_WARNING" Error!#");
+		strcat(txt_buf, "#FF8000 "SYMBOL_WARNING" 錯誤！#");
 
 	lv_label_set_text(lb_val2, txt_buf);
 
@@ -3140,7 +3140,7 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt = lv_label_create(h1, NULL);
-	lv_label_set_static_text(label_txt, "SoC & HW Info");
+	lv_label_set_static_text(label_txt, "晶片與硬體資訊");
 	lv_obj_set_style(label_txt, th->label.prim);
 	lv_obj_align(label_txt, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, 0);
 
@@ -3181,14 +3181,14 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	if (lockpick_found)
 	{
 		lv_label_set_static_text(label_txt2,
-			"View Ipatches and dump the unpatched and patched versions\nof BootROM.\n"
-			"Or dump every single key via #C7EA46 Lockpick RCM#.\n");
+			"查看 Ipatches，並匯出修補前與修補後的\nBootROM。\n"
+			"也能用 #C7EA46 Lockpick RCM# 匯出所有金鑰。\n");
 	}
 	else
 	{
 		lv_label_set_static_text(label_txt2,
-			"View Ipatches and dump the unpatched and patched versions\nof BootROM. Or dump every single key via #C7EA46 Lockpick RCM#.\n"
-			"#FFDD00 bootloader/payloads/Lockpick_RCM.bin is missing or old!#\n");
+			"查看 Ipatches，並匯出修補前與修補後的\nBootROM，也能用 #C7EA46 Lockpick RCM# 匯出所有金鑰。\n"
+			"#FFDD00 bootloader/payloads/Lockpick_RCM.bin 不存在或版本太舊！#\n");
 	}
 
 	lv_obj_set_style(label_txt2, &hint_small_style);
@@ -3206,7 +3206,7 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_t *btn3 = lv_btn_create(h1, btn);
 	label_btn = lv_label_create(btn3, NULL);
 	lv_btn_set_fit(btn3, true, true);
-	lv_label_set_static_text(label_btn, SYMBOL_CIRCUIT"  HW & Fuses");
+	lv_label_set_static_text(label_btn, SYMBOL_CIRCUIT"  硬體與熔絲");
 	lv_obj_align(btn3, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 2);
 	lv_btn_set_action(btn3, LV_BTN_ACTION_CLICK, _create_window_hw_info_status);
 
@@ -3220,9 +3220,9 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_t *label_txt4 = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_txt4, true);
 	lv_label_set_static_text(label_txt4,
-		"View and dump the cached #C7EA46 Fuses# and #C7EA46 KFuses#.\n"
-		"Fuses contain info about the SoC/SKU and KFuses HDCP keys.\n"
-		"You can also see info about #C7EA46 DRAM#, #C7EA46 Screen# and #C7EA46 Touch panel#.");
+		"查看並匯出快取的 #C7EA46 熔絲# 和 #C7EA46 KFuses#。\n"
+		"熔絲記錄晶片與型號資訊，KFuses 則是 HDCP 金鑰。\n"
+		"也能查看 #C7EA46 記憶體#、#C7EA46 螢幕# 和 #C7EA46 觸控面板# 的資訊。");
 	lv_obj_set_style(label_txt4, &hint_small_style);
 	lv_obj_align(label_txt4, btn3, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
 
@@ -3239,7 +3239,7 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_label_set_static_text(label_sep, "");
 
 	lv_obj_t *label_txt3 = lv_label_create(h2, NULL);
-	lv_label_set_static_text(label_txt3, "Storage & Battery Info");
+	lv_label_set_static_text(label_txt3, "儲存裝置與電池資訊");
 	lv_obj_set_style(label_txt3, th->label.prim);
 	lv_obj_align(label_txt3, label_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, 0);
 
@@ -3270,8 +3270,8 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_t *label_txt5 = lv_label_create(h2, NULL);
 	lv_label_set_recolor(label_txt5, true);
 	lv_label_set_static_text(label_txt5,
-		"View info about the eMMC or microSD and their partition list.\n"
-		"Additionally you can benchmark read speeds.");
+		"查看 eMMC 或 microSD 的資訊和分割區清單，\n"
+		"也能測試讀取速度。");
 	lv_obj_set_style(label_txt5, &hint_small_style);
 	lv_obj_align(label_txt5, btn5, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
 
@@ -3288,15 +3288,15 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	}
 	label_btn = lv_label_create(btn7, NULL);
 	lv_btn_set_fit(btn7, true, true);
-	lv_label_set_static_text(label_btn, SYMBOL_BATTERY_FULL"  Battery");
+	lv_label_set_static_text(label_btn, SYMBOL_BATTERY_FULL"  電池");
 	lv_obj_align(btn7, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 2);
 	lv_btn_set_action(btn7, LV_BTN_ACTION_CLICK, _create_window_battery_status);
 
 	lv_obj_t *label_txt6 = lv_label_create(h2, NULL);
 	lv_label_set_recolor(label_txt6, true);
 	lv_label_set_static_text(label_txt6,
-		"View battery and battery charger related info.\n"
-		"Additionally you can dump battery charger's registers.\n");
+		"查看電池和充電晶片的相關資訊，\n"
+		"也能匯出充電晶片的暫存器。\n");
 	lv_obj_set_style(label_txt6, &hint_small_style);
 	lv_obj_align(label_txt6, btn7, LV_ALIGN_OUT_BOTTOM_LEFT, 0, LV_DPI / 3);
 }
